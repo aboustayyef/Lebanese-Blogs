@@ -1,0 +1,196 @@
+// general settings
+
+.strong{
+    font-weight: bold;
+}
+
+.lbred{
+    color: $lb_red;
+}
+
+.searchingFor{
+    width: 200px;
+    float:left;
+    margin-right:20px;
+    background:beige;
+    padding: 2px;
+    h4{
+        font-size: 12px;
+    }
+}
+
+html{
+    font-size: 62.5%;
+    //result: 1em = 10px;
+}
+
+.em{
+    font-style: italic;
+}
+
+.understated{
+    opacity: .7;
+}
+
+.strong{
+    font-weight: bold;
+}
+
+
+.background-greylightest{
+    background: darken(white, 5);
+}
+
+.background-red{
+    background:$lb_red;
+}
+.background-white{
+    background: white;
+}
+
+.background-bluegreen {
+    background: #048C97;
+}
+
+.primaryfont{
+    font-family: "Bitter",sans-serif;
+}
+
+.secondaryfont{
+    font-family: "Source Sans Pro",sans-serif;
+}
+
+.arabicfont{
+    font-family: 'Droid Arabic Kufi', serif;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+body{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    line-height: 1.6em;
+    padding:0;
+    margin: 0;
+}
+
+a{
+    text-decoration:none;
+    color: #555;
+}
+
+a.btn {
+    display: inline-block;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: .6em 1.6em;
+    &.btn-red{
+        background-color: $lb_red;
+        border-color: darken($lb_red, 15);
+        text-shadow: 0 1px 0 darken($lb_red, 15);
+        color: #FFF;
+        &:hover{
+            background-color: darken($lb_red,5);
+            border-color: darken($lb_red, 20);
+        }
+    }
+    &.btn-large{
+        padding: 10px 30px;
+    }
+    &.btn-small{
+        text-transform: capitalize;
+        font-size: 12px;
+        padding: 0.3em 0.3em;
+        line-height: 1em;
+    }
+    &.btn-whitetext{
+        color: white;
+    }
+}
+
+ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+
+h1,h2,h3,h4{
+    line-height: 1.6em;
+    margin: 0;
+}
+
+h1 {font-size:2em;}
+h2 {font-size:1.8em;}
+h3 {font-size:1.6em;}
+p{
+    margin: .5em 0;
+}
+
+textarea, input{
+    padding:.4em .4em;
+    font-size: .8em;
+    line-height: 1.3em;
+    border-radius: 4px;
+    border:silver 1px solid;
+}
+
+// modal window
+
+#modal{
+    display: none;
+    .modal-header{
+        padding:0;
+        overflow: auto;
+        width: 100%;
+        padding:1px;
+        margin-bottom: -20px;
+        .modal-dismiss{
+            margin-top:-2px;
+            color:grey;
+            cursor:pointer;
+            float: right;
+            padding:5px 3px;
+            background:transparent;
+            border:0;
+            font-size: 21px;
+            line-height: 21px;
+            font-weight: bold;
+        }
+    }
+
+    z-index: 1000;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,.7);
+    #modal-window{
+        width:30%;
+        min-width: 300px;
+        margin: 10% auto;
+        background: white;
+        p{
+            padding:10px 30px;
+        }
+        hr{
+            margin: 0;
+        }
+        @media only screen and (max-width:310px){
+            width: 260px;
+            min-width:0;
+
+        }
+    }
+}
+
+@mixin drop-shadow ($x: 1px, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+  -webkit-box-shadow: $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  -moz-box-shadow:    $x $y $blur $spread rgba(0, 0, 0, $alpha);
+  box-shadow:         $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}

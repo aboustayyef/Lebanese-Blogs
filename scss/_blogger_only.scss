@@ -1,0 +1,85 @@
+$left_margin:70px;
+.blogger-header{
+	img{
+		float: left;
+		margin-right: 10px;
+	}
+	h2{
+		font-weight: bold;
+		color:$lb_red;
+		font-size: 35px;
+		line-height: 50px;
+		margin-left: $left_margin;
+	}
+	overflow: auto;
+	clear:both;
+}
+
+#tags{
+	margin-left: $left_margin;
+	a{
+		color:$lb_red;
+		width:auto;
+		background: darken(white,6);
+		border-radius: 3px;
+		padding:3px 5px;
+		margin-right: 5px;
+	}
+}
+
+ul.goToButtons{
+	li{
+		list-style-type: none;
+		float: left;
+		margin-right: 10px;
+	}
+	overflow: auto;
+}
+
+.twitterstylebutton{
+	font-family: Arial;
+	width:auto;
+	color: #333333;
+	font-size: 12px;
+	font-weight: bold;
+	background: -ms-linear-gradient(top, #fefefe 0%, #dfdfdf 100%);
+	background: -moz-linear-gradient(top, #fefefe 0%, #dfdfdf 100%);
+	background: -o-linear-gradient(top, #fefefe 0%, #dfdfdf 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #dfdfdf));
+	background: -webkit-linear-gradient(top, #fefefe 0%, #dfdfdf 100%);
+	border: 1px solid silver;
+	border-radius: 3px;
+	margin-top: 0;
+	padding:2px 5px;
+}
+
+
+
+.blogger{
+	min-height:800px;
+	background: darken(white,10);
+	.bloggerPosts{
+		position:relative;
+	}
+	.blogMeta{
+		background:white;
+		padding:20px;
+		p{
+			font-size: 18px;
+			margin-left: $left_margin;
+		}
+		ul{
+			margin-left:$left_margin;
+		}
+		ul li{
+			margin-top:10px;
+		}
+	}
+}
+
+.bloggerbutton{
+	width:100%;
+	background:white;
+	padding:10px 0 40px 0;
+	text-align:center;
+}

@@ -1,0 +1,71 @@
+//big wrapper 
+#page_wrapper{
+    padding:0;
+    margin:0;
+    overflow:hidden;
+}
+
+//center
+#content_wrapper {
+    position:relative;
+    top:0px;
+    overflow:hidden;
+}
+
+//right of center (without left nav)
+
+#message{
+    padding: 8px 25px;
+    background: whitesmoke;
+    border-bottom: 1px solid $lb_red;
+}
+
+// Favorites and Saved Starter Pages
+#howto{
+    height:inherit;
+    width:100%;
+    background: white;
+    margin:0;
+    padding:0;
+    .howtoContent{
+        .btn{
+            margin-top:10px;
+        }
+        h3{
+            margin: 10px 0;
+        }
+        img{
+            margin: 10px 0;
+        }
+        padding:10px;
+        width: 80%;
+        max-width:450px;
+        min-width:280px;
+        margin: 0 auto;
+    }
+}
+
+.bodyMessage{
+    background:beige;
+    padding: 5px 50px;
+}
+
+#view-area{
+    background: darken(white, 18);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#posts{
+    position:relative;
+}
+
+.loader{
+    z-index: 500;
+}
+
+.endloader{
+    background:darken(white,10);
+    padding: 10px;
+    text-align: center;
+}

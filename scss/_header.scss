@@ -1,0 +1,184 @@
+// header
+// menus are below
+
+$menus-background:darken($lb_red, 8);
+$menus-foreground:white;
+
+div.mainbar-wrapper {
+    z-index: 300;
+    top:0;
+    padding:0;
+    margin:0;
+    height:50px;
+    position:relative;
+    background-color: $lb_red;
+    //@include drop-shadow();
+    border-bottom-width: 0;
+    overflow: hidden;
+    .mainbar{
+        .nav-wrapper{
+            float:right;
+            ul#menu-icons{
+                display: block;
+                float: left;
+                margin:0;
+                padding:0;
+                li{
+                    border-left: 1px lighten($lb_red, 15) solid;
+                    display: block;
+                    float: left;
+                    padding: 13px 15px;
+                    margin:0;
+                    &:hover{
+                        background-color: darken($lb_red, 5);
+                    }
+                    &.selected{
+                        background: $menus-background;
+                        color: $menus-foreground;
+                        -webkit-box-shadow: 1px 0 1px 0 rgba(0,0,0,0.5);
+                        box-shadow: 1px 0 1px 0 rgba(0,0,0,0.5);
+                    }
+                    i{
+                        color:white;
+                        font-size: 1.5em;
+                        cursor: pointer;
+                    }
+
+                    input{
+                        opacity:0;
+                        width:0;
+                        padding: 5px;
+                        height: 8px;
+                        transition:  all 0.3s;
+                        -webkit-transition:  all 0.3s;
+                        border:none;
+                    }
+                }
+            }      
+        }
+    }
+
+    #logo{
+        overflow:hidden;
+        float: left;
+        padding: 6px 20px;
+        display: block;
+        @media only screen and (max-width:510px){
+            width:120px;
+            padding:9px 5px;
+        }
+
+        img.desktop-logo{
+            height:38px;
+            width: auto;
+            @media only screen and (max-width:510px){
+                display:none
+            }
+        }
+        img.mobile-logo{
+            display: none;
+            width:120px;
+            height:40px;
+            @media only screen and (max-width:510px){
+                display:block
+            }
+
+        }
+
+    }
+    #slogan{
+        display:none;
+        width: 480px;
+        float: left;
+        padding-top: 20px;
+        color: darken(beige, 25);
+    }
+
+    #hamburger{
+        display:none;
+        margin-top: 0;
+        color: white;
+        margin-right: 10px;
+        border-right: 1px solid lighten($lb_red, 35);
+        padding: 13px 12px;
+        float: left;
+        background: darken($lb_red,4); 
+        @media only screen and (max-width:768px){
+            display: block;
+        }
+        i{
+            font-size: 1.8em;
+        }
+    }
+}
+.loader {
+    display: block;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+}
+
+#menu-about{
+    &.menu{
+        right: 51px;
+    }
+}
+
+#menu-search{
+    &.menu{
+        right: 0px;
+    }
+}
+
+.menu{
+    background:$menus-background;
+    display:none;
+    position: absolute;
+    top: 50px;
+    z-index:320;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.5);
+    p{
+        background:darken(white,20);
+        font-weight: normal;
+        color:lighten(black,20);
+        padding:10px;
+        font-size: 13px;
+        line-height: 14px;
+        width:280px;
+        margin: 0 auto 10px;
+    }
+    form{
+        padding: 10px;
+
+        input{
+            padding: 5px;
+            width:290px;
+        }
+    }
+    ul{
+        background:inherit;
+        padding:0;
+        margin:0;
+        a{
+            text-decoration: none;
+            color: $menus-foreground;
+            li{
+                margin:0;
+                list-style-type: none;
+                padding:10px 30px;
+                border-bottom: 1px darken(white,30) solid;
+                &.last{
+                    border-bottom:none;
+                }
+                &:hover{
+                    background:darken($lb_red,5);
+                }
+            }
+        }
+    }
+}

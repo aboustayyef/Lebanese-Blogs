@@ -1,0 +1,117 @@
+/**
+*   This is CSS for only the pages
+*/ 
+
+.loader , .endloader{
+	display:none;
+}
+
+em{
+	font-style: italic;
+}
+
+.box{
+	background: lighten($lb_red, 55);
+	border:1px lighten($lb_red, 45) solid;
+	padding: 1em;
+}
+
+.lead{
+	font-size: 1.1em;
+	line-height:1.5em;
+}
+
+i{
+	font-size:1.1em;
+}
+h3{
+	font-size: 1.3em;
+	color:darken($lb_red, 5)
+}
+
+p{
+	margin: 1em 0;
+	line-height:1.6em;
+	strong{
+		font-weight: bold;
+	}
+	i{
+		color:$lb_red;
+	}
+}
+
+.button{
+	background: $lb_red;
+	color: white;
+	border: lighten($lb_red, 10) 1px solid;
+	padding: .45em .4em;
+	font-size: .8em;
+	line-height: 1.3em;
+	width:20%;
+
+}
+textarea, input{
+	width:96%;
+	margin: 15px 0;
+}
+
+a{
+	color: $lb_red;
+	text-decoration: none;
+}
+
+ul#section-choose{
+	z-index:100;
+	display:block;
+	width:23em;
+	height:2em;
+	margin: 1em auto;
+	li{
+		float: left;
+		padding:0.3em 0.5em;
+		font-size: 1.2em;
+		border-right: 0.1em silver solid;
+		&:last-child{
+			border-right:none;
+		}
+	}
+}
+
+
+ul#criteria {
+	margin-bottom:1em;
+	list-style-type: disc;
+	li{
+		margin-left: 1em;
+		line-height: 1.1em;
+		margin-bottom: 1em;
+	}
+}
+
+.section{
+	font-size:1.1em;
+	max-width:46em;
+	margin: 3em auto;
+	padding: 0 1em 3em 1em;
+}
+#pagewrapper{
+	background: white;
+}
+#view-area{
+	background:white;
+	p{
+		&.clear{
+			padding:5px;			
+			background-color: #dff0d8;
+			border-color: #d6e9c6;
+			color: #3c763d;
+		}
+		&.error{
+			padding:5px;
+			background-color: #f2dede;
+			border-color: #ebccd1;
+			color: #a94442;
+		}
+		color: lighten(black, 20);
+	}
+}

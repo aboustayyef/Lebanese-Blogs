@@ -1,0 +1,147 @@
+$compact-padding:10px;
+body{
+	cursor: pointer;
+}
+.compact {
+	border-left:2px solid white;
+	&.selected{
+		$light_red: lighten($lb_red, 40);
+		border-bottom:1px solid $light_red;
+		border-left:2px solid $light_red;
+		@media only screen and (max-width:480px){
+			border-bottom:none;
+			border-left:none;
+		}
+	}
+	width: 100%;
+	overflow: hidden;
+	display: block;
+	background: white;
+	margin-bottom: 0px;
+	border-bottom: 1px solid darken(white,5);
+	> *{
+		line-height: 20px;
+		font-size: 13px;
+	}
+
+	.post_title, .excerpt-preview, .blog_name , .post_time{
+		overflow: hidden;
+		padding:$compact-padding;
+		overflow: hidden;
+		height:14px;
+	}
+
+	.blog_name, .post_title{
+		float:left;
+	}
+
+	.post_title{
+		@media only screen and (max-width:480px){
+			width:120px;
+		}
+	}
+
+	.post_time{
+		float: right;
+		position: absolute;
+		right: $compact-padding;
+		background: white;
+		top:0;
+		@media only screen and (max-width:480px){
+			display:none;
+		}
+	}
+
+
+
+	.excerpt-preview{
+		opacity: 1;
+		color: lighten(black, 70);
+		text-decoration: none;
+
+	}
+	.compact-preview{
+		position:relative;
+		display: block;
+		height: 40px;
+		overflow: hidden; 
+		@media only screen and (max-width:480px){
+			height:46px;
+		}
+		.excerpt-preview{
+			@media only screen and (max-width:480px){
+				display: none
+			}
+		}
+		.blog_name {
+			width:140px;
+			margin-right: $compact-padding;
+			text-decoration: none;
+			font-weight:bold;
+			@media only screen and (max-width:480px){
+				width:300px;
+				padding: 3px 10px;
+				line-height: 1.2em;
+			}
+		}
+		.post_title{
+			@media only screen and (max-width:480px){
+				width:300px;
+				padding: 3px 10px;
+				line-height: 1.2em;
+			}	
+		}
+	}
+	.compact-details{
+		display: none;
+		clear:both;
+		margin-top: 20px;
+	}
+	&.open{
+		.compact-preview{
+			background: darken(white,5);
+		}
+		.excerpt-preview{
+			opacity: 0;
+		}
+		.compact-details{
+			width:480px;
+			margin: 0 auto;
+			display: block;
+			@media only screen and (max-width:480px){
+				width:90%;
+				margin:5%;
+			}
+			img{
+				max-width: 480px;
+				height:auto;
+				@media only screen and (max-width:480px){
+					max-width: 280px;
+				}
+			}
+			h4 {
+				margin-bottom: 0;
+				a{
+				color:darken(silver,20);
+				font-weight: normal;
+				}
+			}
+			h2 {
+				margin-top: 5px;
+				a{
+					line-height: 22px;
+					font-size: 20px;
+					font-weight: bold;
+					color:$lb_red;
+				}
+			}
+			.compact-excerpt{
+				margin: 15px 0;
+				font-family: Georgia, "Times new roman", sans-serif;
+				font-size: 16px;
+				line-height: 22px;
+				a{color:$lb_red}
+			}
+		}
+	}
+}

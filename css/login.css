@@ -1,0 +1,44 @@
+.strong {
+  font-weight: bold; }
+
+body {
+  color: #555;
+  background: white;
+  font-family: 'Helvetica Neue', Sans-serif;
+  font-size: 62.5%;
+  font-size: 1em;
+  line-height: 1.6em; }
+
+.login-box {
+  width: 70%;
+  max-width: 560px;
+  margin: 20px auto;
+  padding: 1em; }
+  .login-box img {
+    max-width: 514px;
+    width: 100%; }
+
+a {
+  color: #b12530; }
+
+h2 {
+  font-weight: normal;
+  color: #b12530; }
+
+p {
+  font-size: 1.2em; }
+
+p.privacy {
+  font-size: .9em;
+  color: #cccccc; }
+
+.facebook_button {
+  display: block;
+  height: 45px;
+  width: 202px;
+  background-image: url("../img/interface/facebook_login_button_404x2.png");
+  background-size: 202px 45px;
+  overflow: auto;
+  background-repeat: no-repeat; }
+  .facebook_button:active {
+    background-image: url("../img/interface/facebook_login_button_pressed_404x2.png"); }

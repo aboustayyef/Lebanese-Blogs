@@ -1,0 +1,20 @@
+$module_padding: 10px;
+$left-sidebar-width : 260px; //(+20 padding)
+$lb_red : #b12530 ;
+$lb_dark_red: #7A323B;
+$interface_border_color: rgb(160,160,160);
+
+@import "reset"; // css reset
+
+@import "general"; // basic elements like h1, a, body ...etch
+@import "left-nav"; // left navigation
+
+@import "header"; // top header and its items
+
+@import "body"; // elements in the body of the page
+@import "cards"; // cards
+@import "timeline"; // Timeline
+@import "compact"; // compact
+
+@import "search_results";
+//@import "thumbnails";

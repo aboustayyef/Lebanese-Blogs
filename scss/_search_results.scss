@@ -1,0 +1,43 @@
+
+/*******************************************************************
+*   search results
+*
+********************************************************************/ 
+
+span.search_string{
+    font-weight: normal;
+    font-style: italic;
+    font-size: .8em;
+}
+
+span.search_string:before{
+    content: "";
+}
+
+span.search_string:after{
+    content: "";
+}
+
+div.resultline{
+    border-top: 1px solid silver;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h3.search_results{
+    color: $lb_red;
+}
+
+.search_footer{
+    position: absolute;
+    bottom:-50px;
+    width:75%;
+}
+
+#imageresults img{
+    margin-right:10px;
+}
+
+.daysago{
+    opacity: .3;
+}

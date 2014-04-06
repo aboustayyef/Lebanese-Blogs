@@ -1,0 +1,204 @@
+$left_padding: 20px;
+
+
+// Light Color Scheme
+$backgroundcolor: white;
+$selected_background: darken(white,4);
+$highlight: $lb_red;
+$link_color: darken(silver,45);
+$icon_color: darken(silver,14);
+$selected_link: white;
+$selected_icon: $lb_red;
+
+// Dark Color Scheme
+// $backgroundcolor: darken(silver, 30);
+// $selected_background: darken(silver, 40);
+// $highlight: darken($selected_background,15);
+// $link_color: darken(white,15);
+// $icon_color: darken(white,30);
+// $selected_link: white;
+// $selected_icon: white;
+
+
+#left-col-wrapper{
+    a{
+        color: $link_color;
+    }
+    display: none ; //javascript will make this 1 once height is calculated and rendered
+    position: relative;
+    top:0;
+    width: 239px ; //280 with border
+    background-color: $backgroundcolor; 
+    float: left;
+    z-index: 400;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-right: 1px solid darken(white, 18);
+    div.leftNav-dismiss{
+            margin-right: 8px;
+            margin-top:8px;
+            background: transparent;
+            color:black;
+            cursor:pointer;
+            float: right;
+            border:0;
+            font-size: 26px;
+            &:focus {
+                outline:none;
+            }
+            &:hover {
+                color: $lb_red;
+            }
+    }
+    .userBox{
+        padding:5px;
+        margin:5px 20px 10px;
+        border: 1px solid darken(white,7);
+        overflow: auto;
+        .profilePic{
+            background-color: darken(white,20);
+            float: left;
+        }
+        .userName, .signout{
+            display: block;
+            margin-left: 65px;
+        }
+        a.signout{
+            color: $lb_red;
+        }
+    }
+    @media only screen and (max-width : 768px){
+        .section{
+            display: none;
+        }
+        &.float_it{
+            display: block;
+            position: absolute;
+            z-index: 500;
+            height:100%;
+            box-shadow: 0 4px 5px #444;
+            border-top:none;
+        }
+    }
+    #users{
+        padding:$left_padding;
+    }
+    
+    #viewtype{
+    }
+    sup{
+        text-transform: capitalize;
+        font-weight: normal;
+        margin-left: 0.2em;
+        font-size: 11px;
+        color:lighten($lb_red,25);
+        vertical-align: baseline;
+        position: relative;
+        top: -0.4em;
+       }
+    h4.sectionheader{
+        text-transform: uppercase;
+        padding:0;
+        margin:0;
+        margin-left: -10px;
+        padding-top:20px;
+        color: $highlight;
+        font-weight: bold;
+        padding-left:$left_padding;
+    }
+    #icons{
+        padding-top: 5px;
+        padding-left:$left_padding; 
+        margin-right:1em;
+        img{
+            margin-right: 10px;
+            border: 1px solid lighten(black,80);
+
+            &:hover{
+                border: 1px solid $lb_red;
+            }
+        }  
+   
+    }
+
+    .label{
+
+        width:239px - $left_padding;
+        i{
+            margin-right:5px;
+            color: $icon_color;
+        }
+        padding-left: $left_padding;
+        &.level1{
+            padding-top:2px;
+            padding-bottom:2px;
+            a{
+                &.facebook-signin-button{
+                    display: block;
+                    width:150px;
+                    height: 22px;
+                    background-image: url(../img/interface/facebook_signin.png);
+                    background-repeat: no-repeat;
+                    &:hover{
+                        background-position: 0 -24px;
+                    }
+                    &:active{
+                        background-position: 0 -48px;
+                    }
+                }
+                #signout-btn{
+                    i{
+                        color:white;
+                    }
+                }
+            }
+        }
+        &.level2{
+            padding-left:$left_padding+20px;
+            padding-top:2px;
+            padding-bottom:2px;
+            width:259px - $left_padding;
+            }
+
+        &:hover{
+            background-color:rgba(0,0,0,0.08);
+            i{
+                color: $lb_red;
+            }
+        }
+        &.noHoverBackground{
+            &:hover{
+                background-color: inherit;
+            }
+        }
+    }
+.credits{
+    color: darken(white,40);
+    padding: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 20px;
+    border-top: 1px solid darken(white,10);
+    a:hover{
+        color:$lb_red;
+    }
+}
+
+
+#readingListCounter{
+    font-size: 0.9em;
+    color: lighten(silver,1);
+    .theFigure{
+        color: $lb_red;
+        margin: 0 2px;
+    }
+}
+
+.selected{
+
+    background-color: $selected_background;
+    i{
+        color: $selected_icon;
+    }
+}
+}

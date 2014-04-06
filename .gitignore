@@ -1,0 +1,10 @@
+cache/*.*
+img/cache/*.*
+config.php
+codekit*.*
+lebaneseblogs.sublime-workspace
+lebaneseblogs.sublime-project
+php_errors.log
+blog/*.*
+blog/
+scss/.sass-cache/
