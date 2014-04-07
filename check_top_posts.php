@@ -3,7 +3,7 @@
 /*This script checks the top post, and if it's new, publishes it to twitter and facebook*/
 
 require_once('init.php');
-require ABSPATH.'classes/facebook/src/facebook.php';  // Include facebook SDK file
+require ABSPATH.'classes/facebook-php-sdk/src/facebook.php';  // Include facebook SDK file
 require ABSPATH.'classes/twitter/twitter.class.php';  // Include facebook SDK file
 
 if (isset($argv[1]) && ($argv[1] == 'debug')) {
