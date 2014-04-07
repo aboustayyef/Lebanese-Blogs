@@ -102,6 +102,7 @@ $(document).on('reArrangePosts', function(){
   lbApp.Posts.flow();
   lbApp.Posts.show();
   $("img.lazy").lazyload({
-     container: $("#view-area")
+     container: $("#view-area"),
+     threshold : 600
   });
 });
