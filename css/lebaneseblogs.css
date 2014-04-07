@@ -840,6 +840,7 @@ div.mainbar-wrapper {
   .card .announcement {
     background: white;
     padding: 10px;
+    border-left: 10px solid #ffcc66;
     margin-bottom: 20px; }
     .card .announcement h4 strong {
       font-weight: bold; }
