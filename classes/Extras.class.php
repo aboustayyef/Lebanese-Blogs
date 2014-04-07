@@ -184,14 +184,13 @@ class Extras
           <div class="card_header primaryfont noborder background-red">
             <h3 class ="whitefont">Top Posts <span class ="deemphasize">in the last </span></h3>
             <div id="timeSelector"><?php echo Lb_functions::hours_to_days($hours); ?><i class ="fa fa-chevron-down rightit"></i></div>
+          </div>
             <ul id ="timeList" style="display:none">
               <li data-hours="12">12 Hours<i class ="fa fa-chevron-up"></i></li>
               <li data-hours="24">24 Hours</li>
               <li data-hours="72">3 Days</li>
               <li data-hours="168">7 days</li>
             </ul>
-          </div>
-
           <div id = "top" class ="card_body elastic">
 
             <?php

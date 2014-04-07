@@ -39,7 +39,29 @@
         border:none;
     }
     border: 1px solid darken(white, 30);
-
+        #timeList{
+            -webkit-transform: translate3d(0,0,0);
+            background-color: darken($lb_red,6);
+            position: fixed;
+            color: white;
+            z-index: 300;
+            margin-top: -34px;
+            margin-left: 190px;
+            border: 1px solid darken($lb_red, 8);
+            li{
+                font-size: 14px;
+                min-width: 80px;
+                padding: 4px 10px;
+                margin: 0;
+                color: #e6e6e6;
+                i{
+                    float:right;
+                }
+                &:hover{
+                    background: darken($lb_red,9);
+                }
+            }  
+        }
     //header
     .card_header{
         direction: ltr;
@@ -68,6 +90,7 @@
             }
         }
         #timeSelector{
+            -webkit-transform: translate3d(0,0,0);
             background: darken($lb_red,5);
             border: 1px solid darken($lb_red, 8);
             color:darken(white,10);
@@ -86,29 +109,7 @@
             }
 
         }
-        #timeList{
-            background-color: darken($lb_red,6);
-            position: fixed;
-            color: white;
-            z-index: 100;
-            margin-top: -24px;
-            margin-left: 180px;
-            border: 1px solid darken($lb_red, 8);
-            li{
-                font-size: 14px;
-                min-width: 80px;
-                padding: 4px 10px;
-                margin: 0;
-                color: #e6e6e6;
-                i{
-                    float:right;
-                }
-                &:hover{
-                    background: darken($lb_red,9);
-                }
-            }
-            
-        }
+
         &.tip{
 
             $background: #FFCC66;
@@ -167,6 +168,7 @@
         }
         &.elastic{
             max-height: inherit;
+            z-index:50;
         }
         &.redbody{
             background: $lb_red;

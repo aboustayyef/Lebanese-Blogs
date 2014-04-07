@@ -1,6 +1,8 @@
 Things to do
 ============
 
+* Add Chron job to update freshness of blogs..
+
 * static page. Fix CSS and email sent message; replace modal with confirmation message.
 
 * Fix Featured Bloggers

@@ -173,48 +173,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/classes\/facebook-php-sdk\/changelog.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/changelog.md",
-		"outputAbbreviatedPath": "\/classes\/facebook-php-sdk\/changelog.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/classes\/facebook-php-sdk\/examples\/example.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/examples\/example.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/classes\/facebook-php-sdk\/examples\/with_js_sdk.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/examples\/with_js_sdk.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/classes\/facebook-php-sdk\/readme.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/readme.md",
-		"outputAbbreviatedPath": "\/classes\/facebook-php-sdk\/readme.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/classes\/facebook-php-sdk\/src\/base_facebook.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -229,24 +187,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/src\/facebook.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/classes\/facebook-php-sdk\/tests\/bootstrap.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/tests\/bootstrap.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/classes\/facebook-php-sdk\/tests\/tests.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/classes\/facebook-php-sdk\/tests\/tests.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -5644,12 +5584,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/_lbApp_core.js": {
+	"\/js\/_lbapp_core.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/_lbApp_core.js",
-		"outputAbbreviatedPath": "\/js\/min\/_lbApp_core-ck.js",
+		"inputAbbreviatedPath": "\/js\/_lbapp_core.js",
+		"outputAbbreviatedPath": "\/js\/min\/_lbapp_core-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -5677,12 +5617,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/_lbApp_posts.js": {
+	"\/js\/_lbapp_posts.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/_lbApp_posts.js",
-		"outputAbbreviatedPath": "\/js\/min\/_lbApp_posts-ck.js",
+		"inputAbbreviatedPath": "\/js\/_lbapp_posts.js",
+		"outputAbbreviatedPath": "\/js\/min\/_lbapp_posts-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -6395,7 +6335,7 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/_lbApp_core.js",
+			"linkedFileAbbreviatedPath": "\/js\/_lbapp_core.js",
 			"position": 3,
 			"type": 0
 			},
@@ -6407,7 +6347,7 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/_lbApp_posts.js",
+			"linkedFileAbbreviatedPath": "\/js\/_lbapp_posts.js",
 			"position": 5,
 			"type": 0
 			},

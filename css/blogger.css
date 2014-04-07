@@ -366,6 +366,25 @@ div.mainbar-wrapper {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     border: none; }
+  .card #timeList {
+    -webkit-transform: translate3d(0, 0, 0);
+    background-color: #982029;
+    position: fixed;
+    color: white;
+    z-index: 300;
+    margin-top: -34px;
+    margin-left: 190px;
+    border: 1px solid #8f1e27; }
+    .card #timeList li {
+      font-size: 14px;
+      min-width: 80px;
+      padding: 4px 10px;
+      margin: 0;
+      color: #e6e6e6; }
+      .card #timeList li i {
+        float: right; }
+      .card #timeList li:hover {
+        background: #8b1d26; }
   .card .card_header {
     direction: ltr;
     overflow: auto;
@@ -388,6 +407,7 @@ div.mainbar-wrapper {
         .card .card_header .add2fav a:hover {
           color: grey; }
     .card .card_header #timeSelector {
+      -webkit-transform: translate3d(0, 0, 0);
       background: #9c212a;
       border: 1px solid #8f1e27;
       color: #e6e6e6;
@@ -402,24 +422,6 @@ div.mainbar-wrapper {
       .card .card_header #timeSelector:hover {
         background: #8f1e27;
         color: white; }
-    .card .card_header #timeList {
-      background-color: #982029;
-      position: fixed;
-      color: white;
-      z-index: 100;
-      margin-top: -24px;
-      margin-left: 180px;
-      border: 1px solid #8f1e27; }
-      .card .card_header #timeList li {
-        font-size: 14px;
-        min-width: 80px;
-        padding: 4px 10px;
-        margin: 0;
-        color: #e6e6e6; }
-        .card .card_header #timeList li i {
-          float: right; }
-        .card .card_header #timeList li:hover {
-          background: #8b1d26; }
     .card .card_header.tip {
       background: #ffcc66;
       color: #664400; }
@@ -460,7 +462,8 @@ div.mainbar-wrapper {
     .card .card_body.nopadding {
       padding: 0; }
     .card .card_body.elastic {
-      max-height: inherit; }
+      max-height: inherit;
+      z-index: 50; }
     .card .card_body.redbody {
       background: #b12530; }
     .card .card_body.silverbody {
