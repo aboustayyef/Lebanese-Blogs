@@ -80,7 +80,7 @@ class Render
 
         ?>
           <div class="card_header background-greylightest">
-            <a href ="<?php echo WEBPATH. $blog_id ; ?>"><img class ="blog_thumb lazy" data-original="<?php echo THUMBS_BASE.$blog_id.'.jpg';?>" src="img/interface/grey.gif" width ="50" height ="50"></a>
+            <a href ="<?php echo WEBPATH. $blog_id ; ?>"><img class ="blog_thumb" src="<?php echo THUMBS_BASE.$blog_id.'.jpg';?>" width ="50" height ="50"></a>
             <div class="post_details">
               <div class="blog_name secondaryfont"><a href ="<?php echo WEBPATH. $blog_id ;?>"><?php echo $blog_name ;?></a></div>
               <div class="blog_tools">
