@@ -101,8 +101,11 @@ $('#view-area').smartscroll(function(){
 $(document).on('reArrangePosts', function(){
   lbApp.Posts.flow();
   lbApp.Posts.show();
-  $("img.lazy").lazyload({
+  $("img.lazy").each(function(){
+    $(this).attr('src',$(this).data('original'));
+  });
+  /*$("img.lazy").lazyload({
      container: $("#view-area"),
      threshold : 600
-  });
+  });*/
 });
