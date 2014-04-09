@@ -435,20 +435,11 @@
             }
         }
     }
-    .announcement-graphic{
-        width: 27px;
-        height: 26px;
-        display: block;
-        float: left;
-        background: #B3D135;
-        color:#fff;
-        margin-right: 10px;
-        padding: 22px 8px;
-        font-size: 25px;
-    }
-    .announcement{
-        height: 50px;
+    .announcement
+    {
+        background: white;
         padding:10px;
+        border-left: 10px solid #ffcc66;
         margin-bottom:20px;
         h4 {
             strong{

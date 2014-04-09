@@ -326,6 +326,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/classes\/scraping.class.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/classes\/scraping.class.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/classes\/simple_html_dom.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1080,15 +1089,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/fb-tokens\/index.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/feeds_fetcher.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/feeds_fetcher.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -5584,12 +5584,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/_lbapp_core.js": {
+	"\/js\/_lbApp_core.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/_lbapp_core.js",
-		"outputAbbreviatedPath": "\/js\/min\/_lbapp_core-ck.js",
+		"inputAbbreviatedPath": "\/js\/_lbApp_core.js",
+		"outputAbbreviatedPath": "\/js\/min\/_lbApp_core-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -5617,12 +5617,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/_lbapp_posts.js": {
+	"\/js\/_lbApp_posts.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/_lbapp_posts.js",
-		"outputAbbreviatedPath": "\/js\/min\/_lbapp_posts-ck.js",
+		"inputAbbreviatedPath": "\/js\/_lbApp_posts.js",
+		"outputAbbreviatedPath": "\/js\/min\/_lbApp_posts-ck.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -6335,7 +6335,7 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/_lbapp_core.js",
+			"linkedFileAbbreviatedPath": "\/js\/_lbApp_core.js",
 			"position": 3,
 			"type": 0
 			},
@@ -6347,7 +6347,7 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/_lbapp_posts.js",
+			"linkedFileAbbreviatedPath": "\/js\/_lbApp_posts.js",
 			"position": 5,
 			"type": 0
 			},
