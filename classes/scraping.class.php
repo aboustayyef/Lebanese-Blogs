@@ -19,17 +19,27 @@ class Scraper
    
     if (is_object($this->_html)) { // if we successfully extracted html     
       $this->_article_container = $this->getArticleBody(); // try to extract article from html
-      if ($this->_article_container) { // If we succesfully extracted article
+      if (is_object($this->_article_container)) { // If we succesfully extracted article
         # everything ok . Construction successful.
       }else{
-        die('Article couldn\'t be extracted. improve this script by adding the article container for this kind of websites');
+        echo 'Article couldn\'t be extracted. improve this script by adding the article container for this kind of websites';
+        return false;
       }
     } else {
-      die('Could not pull HTML');
+      echo "\n[[ WARNING: Could not pull HTML for url $this->_url ]]\n";
+      return false;
     }
   }
 
-  public function getImagesFromHtml($minimumWidth = 0, $returnFirstEligibleImage = false){
+  public function allOk(){
+    if ((is_object($this->_html)) && is_object($this->_article_container)) {
+      return TRUE;
+    }else{
+      return FALSE;
+    }
+  }
+
+  public function getImagesFromLink($minimumWidth = 0, $returnFirstEligibleImage = false){
 
     $eligibleImages = array();
     foreach ($this->_article_container->find('img') as $e)

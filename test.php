@@ -7,7 +7,7 @@ $object = new Scraper('http://shezshe.net/rain');
 
 
 echo '<pre>';
-print_r($object->getImagesFromHtml());
+print_r($object->getImagesFromLink(300,true));
 echo '</pre>';
 
 ?>

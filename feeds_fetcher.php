@@ -8,6 +8,7 @@
 include_once("init.php");
 require_once("feeds_fetcher_functions.php");
 require_once("classes/simplepie.php");
+
 // horizontal line
 $line_length = 70;
 $hr  = "\n".str_repeat('-', $line_length)."\n";
@@ -22,26 +23,14 @@ echo ABSPATH;
 
 echo $dhr;
 
-
 $maxitems = 0;
 
 $connection = DB::GetInstance();
 
 // get all feeds
 
-if (isset($argv[1])) {
-	echo $dhr;
-	echo 'fetching script '.$argv[1];
-	echo $dhr;
-	$feeds = array();
-	$feeds[0] = new stdClass();
-	$feeds[0]->blog_active = 1;
-	$feeds[0]->blog_rss_feed = $argv[1]; 
-	$feeds[0]->blog_id = 'testing';
-} else {
-	$connection->query('SELECT `blog_id`, `blog_rss_feed` , `blog_active` FROM `blogs`');
-	$feeds = $connection->results();
-}
+$connection->query('SELECT `blog_id`, `blog_rss_feed` , `blog_active` FROM `blogs`');
+$feeds = $connection->results();
 
 // loop through feeds
 foreach ($feeds as $feed) 
@@ -80,32 +69,15 @@ foreach ($feeds as $feed)
 			$blog_post_timestamp =  strtotime($item->get_date()); // get post's timestamp;	
 
 			// check if this post is in the database
-			
-			//first, get the path
-			$post_path_parts = parse_url($blog_post_link);
-			$post_path = $post_path_parts['path']; // result example: "/a-new-10000-lebanese-lira-bill/"
-			if (@$post_path_parts['query']) { // has a query (example: ?pagewanted=.....)
-				$post_path = $post_path.'?'.$post_path_parts['query'];
-			}
-			if (@$post_path_parts['fragment']) { // has a fragment (example: #utm=.....)
-				$post_path = $post_path.'#'.$post_path_parts['fragment'];
-			}
-			//echo "\n",'The post path is: '.$post_path."\n";
-			// now check if this particular post is in database. we use a combination of $domain and $post_path and timestamp
-			$exists = $connection->query('SELECT `post_id` FROM `posts` WHERE `blog_id` = "' . $domain . '" AND `post_url` LIKE "%' . $post_path  . '" ');
+			$exists = $connection->query('SELECT post_id FROM posts WHERE post_url = "'.$blog_post_link.'"')->results();
 
-			if ($exists->count() > 0) { // post exists in database
+			if (count($exists) > 0) { // post exists in database
 				if($key == 0){ // The first post in the feed. no need to enter it
 					echo '  [x Nothing to add ] ';
 				}else{
 					echo "\n".$blog_post_link.' [ x ] post is already in the database',"\n";
-				}	
-				
+				}			
 				break;
-			/*} else if ((time()-$blog_post_timestamp) > (3*30*24*60*60)) { //post is more than 3 month old ;
-				Will ignore the time limit for now. See if sustainable.
-				echo '<span style ="color:blue">post is older than three months</span><br>',"\n";
-				continue;*/
 			} else { // ok, new post, insert in database
 
 				$blog_post_title = clean_up($item->get_title(), 120);
@@ -127,7 +99,7 @@ foreach ($feeds as $feed)
 					$blog_post_image_height = 0;
 				}
 
-				  $connection->insert('posts', array(
+				  DB::GetInstance()->insert('posts', array(
 					'post_url'			=>	$blog_post_link,
 					'post_title'		=>	$blog_post_title,
 					'post_image'		=>	$blog_post_image,
@@ -136,9 +108,10 @@ foreach ($feeds as $feed)
 					'post_timestamp'	=>	$blog_post_timestamp,
 					'post_content'		=>	$blog_post_content,
 					'post_image_width'	=>	$blog_post_image_width,
-					'post_image_height'	=>	$blog_post_image_height
+					'post_image_height'	=>	$blog_post_image_height,
+					'post_visits'	=>	0
 					));
-				
+
 				// cache images
 				if ($blog_post_image_width > 0) { // post has images
 					$outFile = ABSPATH.'img/cache/'.$blog_post_timestamp.'_'.$domain.'.'.Lb_functions::get_image_format($blog_post_image);
@@ -160,5 +133,23 @@ foreach ($feeds as $feed)
 }
 
 echo $dhr.'Feeds Work Ended: '.date('d M Y , H:i:s').$dhr;
+
+
+/* Dumpster. Delete when all is ok
+
+			//first, get the path
+			$post_path_parts = parse_url($blog_post_link);
+			$post_path = $post_path_parts['path']; // result example: "/a-new-10000-lebanese-lira-bill/"
+			if (@$post_path_parts['query']) { // has a query (example: ?pagewanted=.....)
+				$post_path = $post_path.'?'.$post_path_parts['query'];
+			}
+			if (@$post_path_parts['fragment']) { // has a fragment (example: #utm=.....)
+				$post_path = $post_path.'#'.$post_path_parts['fragment'];
+			}
+ 			$exists = $connection->query('SELECT `post_id` FROM `posts` WHERE `blog_id` = "' . $domain . '" AND `post_url` LIKE "%' . $post_path  . '" ');
+
+
+
+*/
 
 ?>
