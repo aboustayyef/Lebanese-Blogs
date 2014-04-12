@@ -1,43 +1,50 @@
 <?php 
 
 /************************************************************************************************
-*	This script handles the Cron Job for adding feeds for Lebanese Blogs into the database 		*
-*																								*
+*	This script handles the Cron Job for adding feeds for Lebanese Blogs into the database    		*
 ************************************************************************************************/ 
 
 include_once("init.php");
 require_once("feeds_fetcher_functions.php");
 require_once("classes/simplepie.php");
 
-// horizontal line
+
+// Define CLI Interface Elements
 $line_length = 70;
 $hr  = "\n".str_repeat('-', $line_length)."\n";
 $dhr = "\n".str_repeat('=', $line_length)."\n";
 
+// Produce header
 echo $dhr;
-echo 'work began: '.date('d M Y , H:i:s');
+echo 'Work began: '.date('d M Y , H:i:s');
 $robot = shell_exec('whoami');
-echo "\n Robot: $robot";
-
-echo ABSPATH;
-
+echo "\nRobot: $robot";
+echo "\nPHP in use: ", shell_exec('which php');
+echo "\nAbsolute Path: ". ABSPATH;
 echo $dhr;
 
-$maxitems = 0;
+// get all blogs
+DB::GetInstance()->query('SELECT `blog_id`, `blog_rss_feed` , `blog_active` FROM `blogs`');
+$blogs = DB::GetInstance()->results();
 
-$connection = DB::GetInstance();
-
-// get all feeds
-
-$connection->query('SELECT `blog_id`, `blog_rss_feed` , `blog_active` FROM `blogs`');
-$feeds = $connection->results();
-
-// loop through feeds
-foreach ($feeds as $feed) 
+// loop through blogs
+foreach ($blogs as $blog) 
 {	
-	if ($feed->blog_active == 1) { // ignore blog if it's marked as inactive
-	$workingfeed = $feed->blog_rss_feed;
-	echo "\n",$workingfeed;
+	if ($blog->blog_active == 1)
+	{ // ignore blog if it's marked as inactive
+		$workingfeed = $blog->blog_rss_feed;
+		echo "\n\nNow fetching posts from feed: ",$workingfeed;
+		fetchIndividualFeed($blog, $workingfeed);
+	}
+}
+
+echo $dhr.'Feeds Work Ended: '.date('d M Y , H:i:s').$dhr;
+
+
+function fetchIndividualFeed($blog, $workingfeed)
+{
+	global $hr, $dhr;
+	$maxitems = 0;
 
 	$sp_feed = new SimplePie(); // We'll process this feed with all of the default options.
 	$sp_feed->enable_cache(false);
@@ -61,30 +68,33 @@ foreach ($feeds as $feed)
 			}
 			$blog_post_link = urldecode($blog_post_link);
 			
+			// remove https or http from beginning of link to avoid duplicate posts;
+			$pieces = parse_url($blog_post_link);
+			array_shift($pieces);
+			$reconstructed_url = implode('', $pieces);
 
 			// get blogid , example: beirutspring.com -> beirutspring
-			$domain = $feed->blog_id;
+			$domain = $blog->blog_id;
 
 			// get timestamp
 			$blog_post_timestamp =  strtotime($item->get_date()); // get post's timestamp;	
 
+
 			// check if this post is in the database
-			$exists = $connection->query('SELECT post_id FROM posts WHERE post_url = "'.$blog_post_link.'"')->results();
+			echo "\n---> checking: $reconstructed_url";
+			$exists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_url LIKE "%'.$reconstructed_url.'"')->results();
 
 			if (count($exists) > 0) { // post exists in database
-				if($key == 0){ // The first post in the feed. no need to enter it
-					echo '  [x Nothing to add ] ';
-				}else{
-					echo "\n".$blog_post_link.' [ x ] post is already in the database',"\n";
-				}			
+				echo '  [ x Post already in Database ] ';	
 				break;
 			} else { // ok, new post, insert in database
-
+				echo "\n-------------> New POST";
 				$blog_post_title = clean_up($item->get_title(), 120);
+				echo "\n-------------> Title: $blog_post_title";
 				$temp_content = $item->get_content();
 				$blog_post_content = html_entity_decode($temp_content, ENT_COMPAT, 'utf-8'); // for arabic
 				if ($blog_post_image = dig_suitable_image($blog_post_content, $blog_post_link)){
-					//proceed
+					echo "\n-------------> Image: $blog_post_image";
 				}
 				$blog_post_excerpt = get_blog_post_excerpt($blog_post_content, 120);
 
@@ -120,19 +130,15 @@ foreach ($feeds as $feed)
 					$image->writeImage($outFile);
 				}
 
-				if ($connection->count() > 0) {
-					if($key == 0){ // The first post in the feed. no need to enter it
-						echo $hr.$blog_post_link; echo "   [ √ POST ADDED ] \n";
-					}else{
-						echo $blog_post_link; echo "   [ √ POST ADDED ] \n";
-					}
+				if (DB::GetInstance()->count() > 0) 
+				{
+					echo " [ √ Post Added ]\n";
+				} else {
+					echo "\n [XXX] There was an error. Couldn't Add post.. \n";
 				}
 			}
 		}
 	}
-}
-
-echo $dhr.'Feeds Work Ended: '.date('d M Y , H:i:s').$dhr;
 
 
 /* Dumpster. Delete when all is ok
@@ -146,7 +152,7 @@ echo $dhr.'Feeds Work Ended: '.date('d M Y , H:i:s').$dhr;
 			if (@$post_path_parts['fragment']) { // has a fragment (example: #utm=.....)
 				$post_path = $post_path.'#'.$post_path_parts['fragment'];
 			}
- 			$exists = $connection->query('SELECT `post_id` FROM `posts` WHERE `blog_id` = "' . $domain . '" AND `post_url` LIKE "%' . $post_path  . '" ');
+ 			$exists = DB::GetInstance()->query('SELECT `post_id` FROM `posts` WHERE `blog_id` = "' . $domain . '" AND `post_url` LIKE "%' . $post_path  . '" ');
 
 
 

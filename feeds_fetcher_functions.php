@@ -59,64 +59,50 @@ function clean_up($original_string, $length)
 	return $new_string ;
 }
 
-function dig_suitable_image($content, $link = NULL) {
+function dig_suitable_image($content, $link = NULL)
+{
 
+	/*******************************************************************
+	*	First, try to extract from content of $content
+	********************************************************************/
 
-/*******************************************************************
-*	This functions uses the PHP DOM Parser to extract images
-*
-********************************************************************/
-$firstImage ="";
-$html = str_get_html($content);
-foreach ($html->find('img') as $img) 
+	$firstImage ="";
+	$html = str_get_html($content);
+
+	// First, check if the content has a usable (ie > 300px) image tag
+	foreach ($html->find('img') as $img) 
 	{
-	    $image = $img->getAttribute('src');
+	  $image = $img->getAttribute('src');
+	  $image = normalizeImage($image);
 
-		//clean up string to remove parameters like ?w=xxx&h=sss
-		$image_parts = explode("?",$image);
-		$image_without_parameters = $image_parts[0];
-		$image = $image_without_parameters;
-
-
-		// check if this is a facebook image from a facebook blog. Replace _s.jpg (small images) with _n.jpg (normal)
-
-		if (strpos($image, 'fbcdn')>0){  // this is a facebook hosted image. 
-			$image = preg_replace('/_s.jpg$/', "_n.jpg", $image); // replace image with larger one.
+	  //check if image size is appropriate
+	 	list($width, $height, $type, $attr) = getimagesize("$image");
+		if ($width>299) //only return images 300 px large or wider
+		{ 
+			$firstImage = $image;
+			return $firstImage;
 		}
-
-
-		//remove automatic resizing applied by wordpress and go straight to original image
-		// for example, a file that ends with image-150x250.jpg becomes image.jpg 
-
-		$adjusted = preg_replace('/-[0-9]{3}x[0-9]{3}\.jpg$/', ".jpg", $image);
-		$image = $adjusted;
-
-    	list($width, $height, $type, $attr) = getimagesize("$image");
-    	if ($width>299) //only return images 300 px large or wider
-    	{ 
-    		$firstImage = $image;
-    		break;
-    	}
-    }
-if ($firstImage) 
-	{
-		return $firstImage;
 	}
-elseif (get_image_from_post($link)) {
-	return get_image_from_post($link);
-}
-elseif (get_youtube_thumb($content)) 
-	{
-		return get_youtube_thumb($content);
-	} 
-elseif (get_vimeo_thumb($content))
-	{
-		return get_vimeo_thumb($content);
+
+	// if not, check if the content has usable youtube video
+	$youtubePreview = get_youtube_thumb($content);
+	if ($youtubePreview) {
+		return $youtubePreview;
 	}
-else 
-	{
-	return NULL;
+
+	// try if there's a vimeo video
+	$vimeoPreview = get_vimeo_thumb($content);
+	if ($vimeoPreview) {
+		return $vimeoPreview;
 	}
+
+	// If all above fails, we go scraping from source 
+	if (get_image_from_post($link)) {
+		return get_image_from_post($link);
+	}
+
+// if everything fails
+return false;
 }
 
 function get_vimeo_thumb($content){
@@ -193,5 +179,24 @@ function has_canonical_url ($resource) { // will either return the canonical url
 	}
 }
 
+function normalizeImage($image){
+
+		//clean up string to remove parameters like ?w=xxx&h=sss
+		$image_parts = explode("?",$image);
+		$image_without_parameters = $image_parts[0];
+		$image = $image_without_parameters;
+
+		// check if this is a facebook image from a facebook blog. Replace _s.jpg (small images) with _n.jpg (normal)
+		if (strpos($image, 'fbcdn')>0){  // this is a facebook hosted image. 
+			$image = preg_replace('/_s.jpg$/', "_n.jpg", $image); // replace image with larger one.
+		}
+
+		//remove automatic resizing applied by wordpress and go straight to original image
+		// for example, a file that ends with image-150x250.jpg becomes image.jpg 
+		$adjusted = preg_replace('/-[0-9]{3}x[0-9]{3}\.jpg$/', ".jpg", $image);
+		$image = $adjusted;
+
+		return $image;
+}
 
 ?>
