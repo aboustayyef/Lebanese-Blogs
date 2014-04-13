@@ -71,6 +71,12 @@ function fetchIndividualFeed($blog, $workingfeed)
 			// remove https or http from beginning of link to avoid duplicate posts;
 			$pieces = parse_url($blog_post_link);
 			array_shift($pieces);
+			if(!empty($pieces['query'])){
+				$pieces['query'] = '?'.$pieces['query'];
+			}
+			if(!empty($pieces['fragment'])){
+					$pieces['fragment'] = '#'.$pieces['fragment'];
+			}
 			$reconstructed_url = implode('', $pieces);
 
 			// get blogid , example: beirutspring.com -> beirutspring
