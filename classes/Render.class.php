@@ -102,11 +102,15 @@ class Render
         <div class ="card_body" id ="<?php echo 'content-post-' . $_SESSION['posts_displayed']; ?>">
           <div class="post_time"><?php echo Lb_functions::time_elapsed_string($post->post_timestamp) ?></div>
           <?php 
-            if (isset($_SESSION['admin'])) {
-                 ?>
-                 <div class="number-of-clicks"><?php echo $post->post_visits; ?></div>
-                 <?php
-             }
+            if (isset($_SESSION['admin']))
+            {
+              if ($kind == 'normal') 
+              {
+                ?>
+                <div class="number-of-clicks"><?php echo $post->post_visits; ?></div>
+                <?php
+              }
+            }
           ?>
           <div class="post_title secondaryfont <?php if (Lb_functions::contains_arabic($post->post_title)) {echo " rtl";}else{echo " ltr";} ?>"><a  href="<?php echo $target_url ;?>" target="_blank"><?php echo $post->post_title; ?></a>
           <?php 
