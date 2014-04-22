@@ -33,8 +33,9 @@ class Render
       $target_url = WEBPATH."r.php?r=".urlencode($post->post_url);
       
       // add extra cards (if any)
-      Extras::control($_SESSION['posts_displayed']);
-
+      if ($kind == 'normal') {
+        Extras::control($_SESSION['posts_displayed']);
+      }
       ;?>
       
       <!-- Depending on wheather it's a columnist or a blogger, some variables have to change -->
