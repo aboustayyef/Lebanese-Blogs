@@ -31,6 +31,8 @@ class SearchPage
 
   function render(){
     $_SESSION['pageWanted'] = 'search';
+    $_SESSION['currentView'] = 'cards';
+    $_SESSION['currentChannel'] = 'all';
     $_SESSION['searchTerm'] = $this->_pageDetails['searchTerm'];
     $this->initializeCounter(); // will initialize the counter of the cards
     

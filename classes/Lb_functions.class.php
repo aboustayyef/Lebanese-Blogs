@@ -33,8 +33,8 @@ class Lb_functions {
 
 	// This function is loaded when users enter the website to count their visits. (perhaps more later)
 	public static function registerEntry(){
-		$expire=time()+60*60*24*30;
-		if (isset($_COOKIE['lebaneseblogs_user_visits'])) {
+		$expire=time()+60*60*24*30; // 1 month
+		if (@isset($_COOKIE['lebaneseblogs_user_visits'])) {
 		    // add a visit if cookie exists
 		    $visits = $_COOKIE['lebaneseblogs_user_visits'];
 		    setcookie('lebaneseblogs_user_visits', $visits+1, $expire);
