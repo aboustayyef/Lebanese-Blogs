@@ -14,7 +14,9 @@ global $startTime;
 $endTime = microtime(true);
 $executionTime = ($endTime - $startTime);
 echo '<!--'.str_repeat('-', 100 ).'-->';
-echo '<!-- This user has visited this website '.$_COOKIE['lebaneseblogs_user_visits'].' times -->';
+if (@isset($_COOKIE['lebaneseblogs_user_visits'])) {
+    echo '<!-- This user has visited this website '.$_COOKIE['lebaneseblogs_user_visits'].' times -->';
+}
 echo '<!-- php execution took '.sprintf('%f', $executionTime).' seconds to run -->';
 ?>
 
