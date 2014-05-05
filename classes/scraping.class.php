@@ -68,7 +68,7 @@ class Scraper
   private function getArticleBody(){
 
     // add to these as you find more
-    $knownContainers = array('.post', '.entry-content', '.post-content', '#content', '.content','.article' );
+    $knownContainers = array('.post', 'article', '.entry-content', '.post-content', '#content', '.content','.article' );
     
     foreach ($knownContainers as $key => $container) 
     {
