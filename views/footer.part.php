@@ -96,6 +96,7 @@ echo '<!-- php execution took '.sprintf('%f', $executionTime).' seconds to run -
               })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
               ga('create', 'UA-40418714-1', 'lebaneseblogs.com');
+              ga('require', 'displayfeatures');
               ga('send', 'pageview');
             </script>
         <?php
