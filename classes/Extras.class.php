@@ -164,8 +164,9 @@ class Extras
 
         <div class="card nobackground">
           <div class="announcement">
+            <a href ="http://lebaneseblogs.com/blog/?p=232"><img src="<?php echo WEBPATH.'img/badge-small.png';?>" width = "45px" height ="45px" alt=""></a>
             <h4>
-              Top <a href ="http://lebaneseblogs.com/blog/?p=213">3 New Features</a> in Lebanese Blogs
+              Hey Bloggers! <br><a href ="http://lebaneseblogs.com/blog/?p=232">Add our cool badge</a> to your blog?
             </h4>
           </div>    
 

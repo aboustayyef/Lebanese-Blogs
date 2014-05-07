@@ -335,10 +335,11 @@ div.mainbar-wrapper {
   top: 0;
   padding: 0;
   margin: 0;
-  height: 50px;
+  height: 49px;
   position: relative;
   background-color: #b12530;
   border-bottom-width: 0;
+  border-bottom: solid 1px #9c212a;
   overflow: hidden; }
   div.mainbar-wrapper .mainbar .nav-wrapper {
     float: right; }
@@ -840,8 +841,10 @@ div.mainbar-wrapper {
   .card .announcement {
     background: white;
     padding: 10px;
-    border-left: 10px solid #ffcc66;
     margin-bottom: 20px; }
+    .card .announcement img {
+      float: left;
+      margin-right: 10px; }
     .card .announcement h4 strong {
       font-weight: bold; }
     .card .announcement h4 a {

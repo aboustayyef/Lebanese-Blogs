@@ -439,8 +439,12 @@
     {
         background: white;
         padding:10px;
-        border-left: 10px solid #ffcc66;
+        // border-left: 10px solid #ffcc66;
         margin-bottom:20px;
+        img{
+            float:left;
+            margin-right:10px;
+        }
         h4 {
             strong{
                 font-weight:bold;

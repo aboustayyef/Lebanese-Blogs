@@ -9,11 +9,12 @@ div.mainbar-wrapper {
     top:0;
     padding:0;
     margin:0;
-    height:50px;
+    height:49px;
     position:relative;
     background-color: $lb_red;
     //@include drop-shadow();
     border-bottom-width: 0;
+    border-bottom: solid 1px darken($lb_red,5);
     overflow: hidden;
     .mainbar{
         .nav-wrapper{
