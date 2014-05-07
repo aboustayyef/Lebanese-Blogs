@@ -1093,6 +1093,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/feeds_fetcher.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/feeds_fetcher.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/feeds_fetcher_functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1118,6 +1127,28 @@
 		"initialSize": 80115,
 		"inputAbbreviatedPath": "\/img\/ads\/anghami.png",
 		"outputAbbreviatedPath": "\/img\/ads\/anghami.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/Badge-small.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6696,
+		"inputAbbreviatedPath": "\/img\/Badge-small.png",
+		"outputAbbreviatedPath": "\/img\/Badge-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/badge.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 69730,
+		"inputAbbreviatedPath": "\/img\/badge.png",
+		"outputAbbreviatedPath": "\/img\/badge.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1833,6 +1864,28 @@
 		"initialSize": 1092,
 		"inputAbbreviatedPath": "\/img\/interface\/view-icon-timeline.png",
 		"outputAbbreviatedPath": "\/img\/interface\/view-icon-timeline.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/interface\/visual_assets.sketch\/QuickLook\/Preview.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 78454,
+		"inputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Preview.png",
+		"outputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Preview.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/interface\/visual_assets.sketch\/QuickLook\/Thumbnail.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110294,
+		"inputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Thumbnail.png",
+		"outputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Thumbnail.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2801,6 +2854,17 @@
 		"initialSize": 1714,
 		"inputAbbreviatedPath": "\/img\/thumbs\/dustywyndow.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/dustywyndow.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/dyslexialb.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2047,
+		"inputAbbreviatedPath": "\/img\/thumbs\/dyslexialb.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/dyslexialb.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4961,6 +5025,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/thumbs\/stylememaria.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2866,
+		"inputAbbreviatedPath": "\/img\/thumbs\/stylememaria.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/stylememaria.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/thumbs\/sunsetdeamor.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5324,6 +5399,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/thumbs\/toutbeyrouth.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2212,
+		"inputAbbreviatedPath": "\/img\/thumbs\/toutbeyrouth.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/toutbeyrouth.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/thumbs\/trella.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5364,6 +5450,17 @@
 		"initialSize": 1839,
 		"inputAbbreviatedPath": "\/img\/thumbs\/umerkabboul.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/umerkabboul.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/unelibanaiseaparis.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2026,
+		"inputAbbreviatedPath": "\/img\/thumbs\/unelibanaiseaparis.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/unelibanaiseaparis.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
