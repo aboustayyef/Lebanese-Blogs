@@ -12,9 +12,12 @@
 	<array>
 		<string>HelveticaNeue-Light</string>
 		<string>HelveticaNeue-Bold</string>
+		<string>GeezaPro</string>
+		<string>GeezaPro-Bold</string>
+		<string>HelveticaNeue</string>
 	</array>
 	<key>length</key>
-	<integer>115836</integer>
+	<integer>225234</integer>
 	<key>version</key>
 	<integer>18</integer>
 </dict>

@@ -1131,17 +1131,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/Badge-small.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6696,
-		"inputAbbreviatedPath": "\/img\/Badge-small.png",
-		"outputAbbreviatedPath": "\/img\/Badge-small.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/badge.png": {
 		"fileType": 32768,
 		"ignore": 0,
