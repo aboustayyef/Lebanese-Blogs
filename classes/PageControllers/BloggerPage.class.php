@@ -32,13 +32,20 @@ class BloggerPage
     $_SESSION['currentView'] = 'cards';
     $_SESSION['currentBlogger'] = $this->_pageDetails['bloggerid'];
     $this->getBloggerDetails(); // will populate $this->_postsData
-    
+    $this->initializeCounter(); // will initialize the counter of the cards
+
     View::makeHeader($this->_pageDetails);
     View::makeBloggerBody($this->_bloggerDetails);
     View::makeFooter($this->_footerDetails); // think of the parameters of footer
 
     // Draw the header, pass along the _pageTitle and _pageDescription and 
 
+  }
+
+  function initializeCounter(){
+    // initialize general counter of all posts
+    $_SESSION['posts_displayed'] = 0; // initialize number of posts shown
+    $_SESSION['items_displayed'] = 0; // initialize number of items shown (including other widgets)
   }
 
   function getBloggerDetails(){
