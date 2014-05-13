@@ -89,7 +89,7 @@ function add_post_to_facebook($postObject){
 		'A new blog post is now the most popular on Lebanese Blogs: '.$attribution);
 
 	$messageToShare = $variety_of_messages[rand(0,count($variety_of_messages)-1)];
-	$messageToShare = $messageToShare." Find more top posts at lebaneseblogs.com";
+	$messageToShare = $messageToShare.". Find more top posts at http://lebaneseblogs.com";
 
 	if ($debugMode) {
 		echo "Message to Share on Facebook: \n";
