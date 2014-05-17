@@ -30,8 +30,8 @@ $blogs = DB::GetInstance()->results();
 // loop through blogs
 foreach ($blogs as $blog) 
 {	
-	if ($blog->blog_active == 1)
-	{ // ignore blog if it's marked as inactive
+	if ($blog->blog_active == 1) // ignore blog if it's marked as inactive
+	{ 
 		$workingfeed = $blog->blog_rss_feed;
 		echo "\n\nNow fetching posts from feed: ",$workingfeed;
 		fetchIndividualFeed($blog, $workingfeed);
@@ -47,10 +47,8 @@ function fetchIndividualFeed($blog, $workingfeed)
 	$maxitems = 0;
 
 	$sp_feed = new SimplePie(); // We'll process this feed with all of the default options.
-	$sp_feed->enable_cache(false);
 	$sp_feed->set_feed_url($workingfeed); // Set which feed to process.
-	//$sp_feed->set_cache_location(ABSPATH.'cache');
-	//$sp_feed->set_cache_duration(600); // Set cache to 10 mins
+	$sp_feed->set_useragent('Lebanese Blogs/3.0 (+http://www.lebaneseblogs.com)');
 	$sp_feed->strip_htmltags(false);
 	$sp_feed->init(); // Run SimplePie. 
 	$sp_feed->handle_content_type(); // This makes sure that the content is sent to the browser as text/html and the UTF-8 character set (since we didn't change it).
