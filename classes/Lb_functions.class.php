@@ -101,8 +101,8 @@ class Lb_functions {
 	                30 * 24 * 60 * 60       =>  'month',
 	                24 * 60 * 60            =>  'day',
 	                60 * 60                 =>  'hour',
-	                60                      =>  'minute',
-	                1                       =>  'second'
+	                60                      =>  'min',
+	                1                       =>  'sec'
 	                );
 
 	    foreach ($a as $secs => $str)
