@@ -64,7 +64,7 @@ class BloggerDetails
         FROM posts 
         WHERE post_image_height > 0 
         AND blog_id = "'.$blogger_ID.'"
-        ORDER BY `post_visits` DESC LIMIT ' . $number_of_photos ;   
+        ORDER BY `post_socialScore` DESC LIMIT ' . $number_of_photos ;   
 
         DB::getInstance()->query($query);
         if (DB::getInstance()->error()) {
@@ -127,7 +127,7 @@ class BloggerDetails
         ((blogs.blog_id = "'.trim($whichblogger).'") OR (columnists.col_shorthand = "'.trim($whichblogger).'"))
         AND 
         (posts.post_timestamp > '.$targetMinimumTimeStamp.')
-        ORDER BY `post_visits` DESC LIMIT ' . $number_of_posts ;	
+        ORDER BY `post_socialScore` DESC LIMIT ' . $number_of_posts ;	
         DB::getInstance()->query($query);
         if (DB::getInstance()->error()) {
             echo "There's an error in the query";
