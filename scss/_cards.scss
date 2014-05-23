@@ -107,9 +107,7 @@
                 background: darken($lb_red,8);
                 color:white;
             }
-
         }
-
         &.tip{
 
             $background: #FFCC66;
@@ -646,4 +644,12 @@ i.fav{
     color: silver;
 }
 
+.virality {
+    margin-left: 12px;
+    color: #999;
+}
+
+.viralityBar {
+    font-size: 12px;
+}
 

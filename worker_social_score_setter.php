@@ -41,16 +41,6 @@ foreach($posts as $key => $post){
 	DB::getInstance()->query('UPDATE `posts` SET `post_socialScore` = ' . $socialScore . ' WHERE `post_url` = "' . $post->post_url . '"');
   echo "\n";
 }
-
-//$posts = DB::query('SELECT * FROM posts WHERE ')
-
-// get all the posts in the last 12 hours
-// loop through these posts
-// for each of them
-//  get facebook score
-//  get twitter score
-//  store them
-//    example code: $query = 'UPDATE posts SET post_visits = post_visits+1 WHERE post_url = "'.$url.'"';
-//                  DB::getInstance()->query($query);]
+// Note: $virality = round(2 + 1.5*(sqrt($totalScore)));
 
 ?>

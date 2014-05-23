@@ -965,6 +965,13 @@ i.fav {
 .updating i {
   color: silver; }
 
+.virality {
+  margin-left: 12px;
+  color: #999; }
+
+.viralityBar {
+  font-size: 12px; }
+
 .timeline-post {
   background: #fcfcfc;
   padding-bottom: 10px;

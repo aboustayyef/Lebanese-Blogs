@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "16895",
+"creatorBuild": "16921",
 "files": {
 	"\/admin\/add_blog.php": {
 		"fileType": 8192,
@@ -349,6 +349,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/classes\/simplepie.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/classes\/SocialScore.class.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/classes\/SocialScore.class.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1131,6 +1140,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/badge-small.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6696,
+		"inputAbbreviatedPath": "\/img\/badge-small.png",
+		"outputAbbreviatedPath": "\/img\/badge-small.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/badge.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1861,7 +1881,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 78454,
+		"initialSize": 1.04296e+06,
 		"inputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Preview.png",
 		"outputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Preview.png",
 		"outputPathIsOutsideProject": 0,
@@ -1872,7 +1892,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 110294,
+		"initialSize": 85784,
 		"inputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Thumbnail.png",
 		"outputAbbreviatedPath": "\/img\/interface\/visual_assets.sketch\/QuickLook\/Thumbnail.png",
 		"outputPathIsOutsideProject": 0,
@@ -1963,6 +1983,17 @@
 		"initialSize": 1398,
 		"inputAbbreviatedPath": "\/img\/thumbs\/2fkari.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/2fkari.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/abedkataya.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4094,
+		"inputAbbreviatedPath": "\/img\/thumbs\/abedkataya.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/abedkataya.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2220,17 +2251,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/thumbs\/autismbloglb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2481,
-		"inputAbbreviatedPath": "\/img\/thumbs\/autismbloglb.jpg",
-		"outputAbbreviatedPath": "\/img\/thumbs\/autismbloglb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/thumbs\/backinbeirut.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -2260,6 +2280,17 @@
 		"initialSize": 1399,
 		"inputAbbreviatedPath": "\/img\/thumbs\/bananapook.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/bananapook.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/behindthef.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2569,
+		"inputAbbreviatedPath": "\/img\/thumbs\/behindthef.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/behindthef.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3276,6 +3307,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/thumbs\/hopeclinicblog.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2481,
+		"inputAbbreviatedPath": "\/img\/thumbs\/hopeclinicblog.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/hopeclinicblog.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/thumbs\/howitakemycoffee.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3492,6 +3534,17 @@
 		"initialSize": 2334,
 		"inputAbbreviatedPath": "\/img\/thumbs\/kadmous.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/kadmous.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/kamyoon.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3443,
+		"inputAbbreviatedPath": "\/img\/thumbs\/kamyoon.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/kamyoon.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3907,7 +3960,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1389,
+		"initialSize": 3613,
 		"inputAbbreviatedPath": "\/img\/thumbs\/marmiteetponpon.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/marmiteetponpon.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -4985,7 +5038,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 1957,
+		"initialSize": 4651,
 		"inputAbbreviatedPath": "\/img\/thumbs\/speaktheblues.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/speaktheblues.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -5032,6 +5085,17 @@
 		"initialSize": 5141,
 		"inputAbbreviatedPath": "\/img\/thumbs\/sunsetdeamor.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/sunsetdeamor.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/supermommybeirut.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7533,
+		"inputAbbreviatedPath": "\/img\/thumbs\/supermommybeirut.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/supermommybeirut.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -5487,6 +5551,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/thumbs\/vwsquarebacktolife.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4051,
+		"inputAbbreviatedPath": "\/img\/thumbs\/vwsquarebacktolife.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/vwsquarebacktolife.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/thumbs\/wanderingviola.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -5782,7 +5857,7 @@
 		},
 	"\/js\/production\/lbApp-ck.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/production\/lbApp-ck.js",
 		"outputAbbreviatedPath": "\/js\/production\/min\/lbApp-ck-ck.js",
@@ -5794,11 +5869,11 @@
 	"\/js\/production\/lbApp.js": {
 		"fileType": 64,
 		"ignore": 0,
-		"ignoreWasSetByUser": 1,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/production\/lbApp.js",
-		"outputAbbreviatedPath": "\/js\/production\/lbApp-ck.js",
+		"outputAbbreviatedPath": "\/js\/production\/min\/lbApp-ck.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
@@ -5849,6 +5924,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/media_definitions.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/posts_deduper.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/posts_deduper.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -6394,6 +6478,15 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/worker_social_score_setter.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/worker_social_score_setter.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
@@ -6534,6 +6627,14 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"no_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"no_empty_param_list": {
 			"active": 0,
 			"flagValue": -1
@@ -6543,6 +6644,10 @@
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -6568,6 +6673,10 @@
 			},
 		"no_trailing_whitespace": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"non_empty_constructor_needs_parens": {
@@ -6688,10 +6797,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"gcl": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"globalstrict": {
 			"active": 0,
 			"flagValue": -1
@@ -6804,10 +6909,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"onevar": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"phantom": {
 			"active": 0,
 			"flagValue": -1
@@ -6844,10 +6945,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"smarttabs": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -6860,10 +6957,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"trailing": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"typed": {
 			"active": 0,
 			"flagValue": -1
@@ -6874,10 +6967,6 @@
 			},
 		"unused": {
 			"active": 1,
-			"flagValue": -1
-			},
-		"white": {
-			"active": 0,
 			"flagValue": -1
 			},
 		"withstmt": {

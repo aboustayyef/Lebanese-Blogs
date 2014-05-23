@@ -22,6 +22,20 @@ class Render
     }
   }
 
+  public static function drawVirality($shares){
+    $virality = 2+round(3 * sqrt($shares));
+    if ($virality > 50) {
+      $virality = 50;
+    }
+    $viralityColor = round((255/50)*$virality);
+    echo '<span class ="virality">Virality: ';
+    echo '<span class ="viralityBar" title ="Virality Score: ' . $virality . '/50" style ="color:rgba('.$viralityColor.',120,120,1)">';
+    echo str_repeat('|', $virality);
+    echo '<span style ="color:rgba('.$viralityColor.',120,120,0.2)">';
+    echo str_repeat('|', 50-$virality);
+    echo '</span></span></span>';
+  }
+
   public static function drawCards($data, $kind='normal') // kinds supported: 'normal' & 'blogger'
   {
     // loops through the posts
@@ -100,7 +114,15 @@ class Render
 
         <!--card body-->
         <div class ="card_body" id ="<?php echo 'content-post-' . $_SESSION['posts_displayed']; ?>">
-          <div class="post_time"><?php echo Lb_functions::time_elapsed_string($post->post_timestamp) ?></div>
+          <div class="post_time">
+            <?php 
+              // time since posted
+              echo Lb_functions::time_elapsed_string($post->post_timestamp);
+              // show virality bar
+              self::drawVirality($post->post_totalShares);
+            ?>
+
+          </div>
           <?php 
             if (isset($_SESSION['admin']))
             {
