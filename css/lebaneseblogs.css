@@ -966,7 +966,7 @@ i.fav {
   color: silver; }
 
 .virality {
-  margin-left: 12px;
+  float: right;
   color: #999; }
 
 .viralityBar {

@@ -33,7 +33,7 @@ foreach($posts as $key => $post){
   $totalScore = $score->getFacebookScore() + $score->getTwitterScore();
   
   // The formula for social score scales downward the social sharing to avoid disproportional figures;
-  $socialScore = $postVisits + round(sqrt($totalScore));
+  $socialScore = $postVisits + ( 2 * round(sqrt($totalScore)));
 
   DB::getInstance()->query('UPDATE `posts` SET `post_facebookShares` = ' . $score->getFacebookScore() . ' WHERE `post_url` = "' . $post->post_url . '"');
   DB::getInstance()->query('UPDATE `posts` SET `post_twitterShares` = ' . $score->getTwitterScore() . ' WHERE `post_url` = "' . $post->post_url . '"');

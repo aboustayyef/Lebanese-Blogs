@@ -165,46 +165,46 @@ class Posts
 
     }
 
-    public static function get_blogger_posts($number_of_posts = 10, $whichblogger = NULL) { //default is 10 posts
-        // get blog's details
+    // public static function get_blogger_posts($number_of_posts = 10, $whichblogger = NULL) { //default is 10 posts
+    //     // get blog's details
 
-        $query = 
-        'SELECT
-        blogs.blog_id, 
-        columnists.col_shorthand, 
-        blogs.blog_name, 
-        columnists.col_name,
-        blogs.blog_description, 
-        columnists.col_description, 
-        blogs.blog_tags, 
-        columnists.col_tags, 
-        blogs.blog_url, 
-        columnists.col_home_page,
-        posts.post_url, 
-        posts.post_timestamp, 
-        posts.post_title, 
-        posts.post_image,
-        posts.post_image_height, 
-        posts.post_image_width, 
-        posts.post_excerpt, 
-        blogs.blog_author_twitter_username, 
-        columnists.col_author_twitter_username,
-        posts.post_totalShares,
-        posts.post_socialScore
-        FROM `posts` 
-        LEFT JOIN `blogs` ON posts.blog_id = blogs.blog_id 
-        LEFT JOIN `columnists` ON posts.blog_id = columnists.col_shorthand
-        WHERE (blogs.blog_id = "'.trim($whichblogger).'") OR (columnists.col_shorthand = "'.trim($whichblogger).'") 
-        ORDER BY `post_timestamp` DESC LIMIT ' . $number_of_posts ;
+    //     $query = 
+    //     'SELECT
+    //     blogs.blog_id, 
+    //     columnists.col_shorthand, 
+    //     blogs.blog_name, 
+    //     columnists.col_name,
+    //     blogs.blog_description, 
+    //     columnists.col_description, 
+    //     blogs.blog_tags, 
+    //     columnists.col_tags, 
+    //     blogs.blog_url, 
+    //     columnists.col_home_page,
+    //     posts.post_url, 
+    //     posts.post_timestamp, 
+    //     posts.post_title, 
+    //     posts.post_image,
+    //     posts.post_image_height, 
+    //     posts.post_image_width, 
+    //     posts.post_excerpt, 
+    //     blogs.blog_author_twitter_username, 
+    //     columnists.col_author_twitter_username,
+    //     posts.post_totalShares,
+    //     posts.post_socialScore
+    //     FROM `posts` 
+    //     LEFT JOIN `blogs` ON posts.blog_id = blogs.blog_id 
+    //     LEFT JOIN `columnists` ON posts.blog_id = columnists.col_shorthand
+    //     WHERE (blogs.blog_id = "'.trim($whichblogger).'") OR (columnists.col_shorthand = "'.trim($whichblogger).'") 
+    //     ORDER BY `post_timestamp` DESC LIMIT ' . $number_of_posts ;
 
-        DB::getInstance()->query($query);
-        if (DB::getInstance()->error()) {
-            echo "There's an error in the query";
-        } else {
-            $output = NormalizeResults(DB::getInstance()->results());
-            return $output;
-        }
-    }
+    //     DB::getInstance()->query($query);
+    //     if (DB::getInstance()->error()) {
+    //         echo "There's an error in the query";
+    //     } else {
+    //         $output = NormalizeResults(DB::getInstance()->results());
+    //         return $output;
+    //     }
+    // }
 
 
     public static function get_top_posts($hours, $posts_to_show = 5, $channel = NULL){
@@ -234,7 +234,7 @@ class Posts
             FROM posts LEFT JOIN blogs ON posts.blog_id = blogs.blog_id 
             LEFT JOIN columnists ON posts.blog_id = columnists.col_shorthand
             WHERE ((blogs.blog_tags LIKE "%'.$channel.'%") OR (columnists.col_tags LIKE "%'.$channel.'%")) AND (posts.post_timestamp > '.$lb_before.')
-            ORDER BY post_visits DESC LIMIT '.$posts_to_show;
+            ORDER BY post_socialScore DESC LIMIT '.$posts_to_show;
         } else {
             $query = 
             'SELECT 
@@ -254,7 +254,7 @@ class Posts
             posts.post_socialScore 
             FROM posts LEFT JOIN blogs ON posts.blog_id = blogs.blog_id 
             LEFT JOIN columnists ON posts.blog_id = columnists.col_shorthand
-            WHERE posts.post_timestamp > '.$lb_before.' ORDER BY post_visits DESC LIMIT '.$posts_to_show;
+            WHERE posts.post_timestamp > '.$lb_before.' ORDER BY post_socialScore DESC LIMIT '.$posts_to_show;
         }
 
         DB::getInstance()->query($query);

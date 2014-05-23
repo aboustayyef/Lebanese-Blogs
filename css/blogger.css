@@ -781,6 +781,13 @@ i.fav {
 .updating i {
   color: silver; }
 
+.virality {
+  float: right;
+  color: #999; }
+
+.viralityBar {
+  font-size: 12px; }
+
 .blogger-header {
   overflow: auto;
   clear: both; }
