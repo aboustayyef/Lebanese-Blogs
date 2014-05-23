@@ -119,7 +119,10 @@ class Render
               // time since posted
               echo Lb_functions::time_elapsed_string($post->post_timestamp);
               // show virality bar
-              self::drawVirality($post->post_totalShares);
+              if ($kind == 'normal'){
+                self::drawVirality($post->post_totalShares);
+              }
+              
             ?>
 
           </div>
