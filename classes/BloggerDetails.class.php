@@ -162,7 +162,8 @@ class BloggerDetails
         blogs.blog_author_twitter_username, 
         columnists.col_author_twitter_username,
         posts.post_totalShares,
-        posts.post_socialScore
+        posts.post_socialScore,
+        posts.post_virality
         FROM `posts` 
         LEFT JOIN `blogs` ON posts.blog_id = blogs.blog_id 
         LEFT JOIN `columnists` ON posts.blog_id = columnists.col_shorthand

@@ -22,11 +22,7 @@ class Render
     }
   }
 
-  public static function drawVirality($shares){
-    $virality = 2+round(3 * sqrt($shares));
-    if ($virality > 50) {
-      $virality = 50;
-    }
+  public static function drawVirality($virality){
     $viralityColor = round((255/50)*$virality);
     echo '<span class ="virality">Virality: ';
     echo '<span class ="viralityBar" title ="Virality Score: ' . $virality . '/50" style ="color:rgba('.$viralityColor.',120,120,1)">';
@@ -119,7 +115,7 @@ class Render
               // time since posted
               echo Lb_functions::time_elapsed_string($post->post_timestamp);
               // show virality bar
-                self::drawVirality($post->post_totalShares);             
+                self::drawVirality($post->post_virality);             
             ?>
 
           </div>
