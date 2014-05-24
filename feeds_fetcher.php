@@ -50,6 +50,7 @@ function fetchIndividualFeed($blog, $workingfeed)
 	$sp_feed->set_feed_url($workingfeed); // Set which feed to process.
 	$sp_feed->set_useragent('Lebanese Blogs/3.0 (+http://www.lebaneseblogs.com)');
 	$sp_feed->strip_htmltags(false);
+	$sp_feed->enable_cache(false);
 	$sp_feed->init(); // Run SimplePie. 
 	$sp_feed->handle_content_type(); // This makes sure that the content is sent to the browser as text/html and the UTF-8 character set (since we didn't change it).
 
@@ -83,17 +84,19 @@ function fetchIndividualFeed($blog, $workingfeed)
 			// get timestamp
 			$blog_post_timestamp =  strtotime($item->get_date()); // get post's timestamp;	
 
+			// get title
+			$blog_post_title = clean_up($item->get_title(), 120);
 
 			// check if this post is in the database
 			echo "\n---> checking: $reconstructed_url";
-			$exists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_url LIKE "%'.$reconstructed_url.'"')->results();
+			$urlExists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_url LIKE "%'.$reconstructed_url.'"')->results();
+			$nameExists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_title ="' . $blog_post_title . '" AND blog_id ="' . $domain . '"')->results();
 
-			if (count($exists) > 0) { // post exists in database
+			if ((count($urlExists) > 0) || (count($nameExists) > 0)) { // post exists in database
 				echo '  [ x Post already in Database ] ';	
 				break;
 			} else { // ok, new post, insert in database
 				echo "\n-------------> New POST";
-				$blog_post_title = clean_up($item->get_title(), 120);
 				echo "\n-------------> Title: $blog_post_title";
 				$temp_content = $item->get_content();
 				$blog_post_content = html_entity_decode($temp_content, ENT_COMPAT, 'utf-8'); // for arabic
