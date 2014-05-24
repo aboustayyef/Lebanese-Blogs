@@ -30,15 +30,23 @@ foreach($posts as $key => $post){
   echo $post->post_url;
   $postVisits = $post->post_visits;
 	$score = new SocialScore($post->post_url);
+
   $totalScore = $score->getFacebookScore() + $score->getTwitterScore();
   
+  // old formula: $virality = 2+round(3 * sqrt($shares));
+  $virality = 2 + round(6 * (pow($totalScore, 1/3)));
+    if ($virality > 50) {
+      $virality = 50;
+  }
+
   // The formula for social score scales downward the social sharing to avoid disproportional figures;
-  $socialScore = $postVisits + ( 2 * round(sqrt($totalScore)));
+  $socialScore = round($postVisits + ($virality/2));
 
   DB::getInstance()->query('UPDATE `posts` SET `post_facebookShares` = ' . $score->getFacebookScore() . ' WHERE `post_url` = "' . $post->post_url . '"');
   DB::getInstance()->query('UPDATE `posts` SET `post_twitterShares` = ' . $score->getTwitterScore() . ' WHERE `post_url` = "' . $post->post_url . '"');
   DB::getInstance()->query('UPDATE `posts` SET `post_totalShares` = ' . $totalScore . ' WHERE `post_url` = "' . $post->post_url . '"');
 	DB::getInstance()->query('UPDATE `posts` SET `post_socialScore` = ' . $socialScore . ' WHERE `post_url` = "' . $post->post_url . '"');
+  DB::getInstance()->query('UPDATE `posts` SET `post_virality` = ' . $virality . ' WHERE `post_url` = "' . $post->post_url . '"');
   echo "\n";
 }
 // Note: $virality = round(2 + 1.5*(sqrt($totalScore)));
