@@ -33,8 +33,9 @@ foreach($posts as $key => $post){
 
   $totalScore = $score->getFacebookScore() + $score->getTwitterScore();
   
-  // old formula: $virality = 2+round(3 * sqrt($shares));
-  $virality = 2 + round(6 * (pow($totalScore, 1/3)));
+  // formula#1: $virality = 2+round(3 * sqrt($shares));
+  // fromula#2: $virality = 2 + round(6 * (pow($totalScore, 1/3)));
+  $virality = $totalScore > 0 ? round( 8 * log($totalScore) ) : 2 ;
     if ($virality > 50) {
       $virality = 50;
   }
