@@ -42,7 +42,7 @@ foreach($posts as $key => $post){
 
   // The formula for social score scales downward the social sharing to avoid disproportional figures;
   $socialScore = $postVisits + $virality;
-
+  echo "\ntotal shares: $totalScore, Virality: $virality\n";
   DB::getInstance()->query('UPDATE `posts` SET `post_facebookShares` = ' . $score->getFacebookScore() . ' WHERE `post_url` = "' . $post->post_url . '"');
   DB::getInstance()->query('UPDATE `posts` SET `post_twitterShares` = ' . $score->getTwitterScore() . ' WHERE `post_url` = "' . $post->post_url . '"');
   DB::getInstance()->query('UPDATE `posts` SET `post_totalShares` = ' . $totalScore . ' WHERE `post_url` = "' . $post->post_url . '"');
