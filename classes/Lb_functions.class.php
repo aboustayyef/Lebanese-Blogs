@@ -151,7 +151,6 @@ class Lb_functions {
 	}
 
 static function get_image_format($imageUrl){
-	echo "::get_image_format of $imageUrl\n";
 	$format = strtolower(substr($imageUrl, -3));
 	if (($format == 'jpg')||($format == 'peg')) {
 		return 'jpg';
