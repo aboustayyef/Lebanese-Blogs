@@ -48,22 +48,33 @@ foreach ($columnists as $key => $columnist) {
 					$image_height = 0;
 				}
 
+				// when a reset is being done, use line 2. Else use line 1;
+				$timeStampToUse = time(); // line 1
+				// $timeStampToUse = $article['timestamp']
+
+
 				DB::getInstance()->insert('posts', array(
 					'post_url'	=>	$article['link'],
 					'post_title'	=>	$article['title'],
 					'post_image'	=>	$image_source,
 					'post_excerpt'	=> 	$article['excerpt'],
 					'blog_id'		=>	$columnist->col_shorthand,
-
-					// if we're doing a reset, uncomment line below 
-					// 'post_timestamp' => $article['timestamp'],
-					
-					// For update mode, uncomment line below to use the current time for timestamp.
-					'post_timestamp'	=> time(),
+					'post_timestamp'	=> $timeStampToUse,
 					'post_content'	=> $article['content'],
 					'post_image_height'	=> $image_height,
 					'post_image_width'	=>	$image_width,
 				));
+
+
+				// cache images
+				if ($image_width > 0) { // post has images
+					$image = new Imagick($image_source);
+					$image = $image->flattenImages();
+					$image->setFormat('JPEG');
+					$image->thumbnailImage(300,0);
+					$outFile = ABSPATH.'img/cache/'.$timeStampToUse.'_'.$columnist->col_shorthand.'.jpg';//.Lb_functions::get_image_format($image_source);
+					$image->writeImage($outFile);
+				}
 
 				echo 'added: "'.$article['title'].'"';
 				echo "\n";

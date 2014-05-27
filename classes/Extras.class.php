@@ -164,9 +164,9 @@ class Extras
 
         <div class="card nobackground">
           <div class="announcement">
-            <a href ="http://lebaneseblogs.com/blog/?p=232"><img src="<?php echo WEBPATH.'img/badge-small.png';?>" width = "45px" height ="45px" alt=""></a>
             <h4>
-              Hey Bloggers! <br><a href ="http://lebaneseblogs.com/blog/?p=232">Add our cool badge</a> to your blog?
+              <a href ="http://lebaneseblogs.com/blog/?p=239">What is "virality"?</a><br>
+              <span style ="opacity:0.3"><?php echo str_repeat("|", 30); ?></span><span style ="opacity:0.1"><?php echo str_repeat("|", 20); ?></span>
             </h4>
           </div>    
 
