@@ -152,10 +152,10 @@ class Lb_functions {
 
 static function get_image_format($imageUrl){
 	$format = strtolower(substr($imageUrl, -3));
-	if (($format == 'jpg')||($format == 'peg')) {
-		return 'jpg';
-	} else {
+	if (($format == 'gif')||($format == 'png')) {
 		return $format;
+	} else {
+		return "jpg";
 	}
 }
 
