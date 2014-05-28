@@ -1,4 +1,4 @@
- <?php 
+<?php 
 /**
 * This class has a set of functions that extract details for particular bloggers
 */

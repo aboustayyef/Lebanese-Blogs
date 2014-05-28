@@ -1,9 +1,7 @@
 <?php 
 $startTime = microtime(true);
 session_start();
-
 //dependencies
-
 include_once("config.php");
 /*function my_autoloader($class) {
 	include 'classes/' . $class . '.php';
@@ -11,8 +9,6 @@ include_once("config.php");
 spl_autoload_register('my_autoloader');*/
 
 include ABSPATH.'/classes/GetArticles.php';
-
-
 // Will manually include classes to control which classes I'm no longer using
 include ABSPATH.'/classes/DB.class.php'; 
 include ABSPATH.'/classes/Posts.class.php'; 
@@ -40,7 +36,5 @@ include ABSPATH.'/classes/PageControllers/_Static_About.class.php';
 
 //facebook
 include ABSPATH.'/classes/facebook-php-sdk/src/facebook.php';
-
 //include ABSPATH.'/classes/PageControllers/SearchPage.class.php';
-
 ?>
