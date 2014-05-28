@@ -57,7 +57,7 @@ foreach ($data as $key => $feed_item) {
   $_feed_item_parts .= "\n<link>".htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS')."</link>";
   $_feed_item_parts .= "\n<description>".htmlspecialchars($post_content)."</description>";
   $_feed_item_parts .= "\n<pubDate>$item_pub_date </pubDate>";
-  $_feed_item_parts .= "\n<guid>".htmlspecialchars($feed_item->post_url)."_$feed_item->post_id</guid>";
+  $_feed_item_parts .= "\n<guid>".htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS')."</guid>";
   $_feed_item_parts .="\n</item>";
   $feed_items .= $_feed_item_parts;
 }
