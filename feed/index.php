@@ -62,7 +62,7 @@ foreach ($data as $key => $feed_item) {
   }
 
   $post_content.= $feed_item->post_excerpt;
-  $post_content.= '<p><a href ="' . $item_url . '">Go to the post &rarr;</p>';
+  $post_content.= '<p><a href ="' . $item_url . '">Go to the post &rarr;</a></p>';
 
   
   $lebaneseBlogsTools = "<h4>Lebanese Blogs Tools</h4>";
