@@ -3,20 +3,32 @@ $channel = @$_GET['channel'];
 header("Content-Type:text/xml");
 require_once('../init.php');
 $numberOfFeedItems = 25;
-$channel = empty($channel)? 'all': $channel;
+if (empty($channel)) {
+  $channel = 'all';
+  $feed_channel_title = 'Lebanese Blogs Feed';
+  $feed_channel_description = htmlentities('This is an automated RSS feed of the lebanese blogs featured on lebaneseblogs.com');
+} else {
+  $channelName = htmlentities(Channels::resolveDescription($channel));
+  if (empty($channelName)) {
+    die('This channel does not exist');
+  }
+  $feed_channel_title = $channelName.' at Lebanese Blogs';
+  $feed_channel_description = htmlentities('This is an automated RSS feed of lebanese '. $channelName .' blogs as featured on lebaneseblogs.com');
+}
 
 $data = Posts::get_latest_posts($numberOfFeedItems, $channel);
 $now = new dateTime();
 $pubDate = $now->format('D, d M Y H:i:s O');
 $feedLocation = WEBPATH.'feed';
+
 // using RSS 2.0 using specs at http://cyber.law.harvard.edu/rss/rss.html
 $feed_header = <<<feedheader
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lebanese Blogs Feed</title>
+    <title>$feed_channel_title</title>
     <link>http://lebaneseblogs.com/</link>
-    <description>Lebanese Blogs Feed</description>
+    <description>$feed_channel_description</description>
     <language>en-us</language>
     <lastBuildDate>$pubDate </lastBuildDate>
     <generator>Lebanese Blogs</generator>
@@ -50,7 +62,7 @@ foreach ($data as $key => $feed_item) {
   }
 
   $post_content.= $feed_item->post_excerpt;
-  $post_content.= ' [<a href ="' . $item_url . '">Go to the post &rarr;</a>]';
+  $post_content.= '<p><a href ="' . $item_url . '">Go to the post &rarr;</p>';
 
   
   $lebaneseBlogsTools = "<h4>Lebanese Blogs Tools</h4>";
@@ -63,7 +75,7 @@ foreach ($data as $key => $feed_item) {
 
   $lebaneseBlogsTools .= "</ul>"; 
 
-  $post_content .= '<p>--</p>' . $lebaneseBlogsTools;
+  $post_content .= $lebaneseBlogsTools;
 
   $item_pub_date = new dateTime();
   $item_pub_date->setTimestamp($feed_item->post_timestamp);

@@ -65,6 +65,11 @@ class Channels
     }
   }
 
+  public static function resolveDescription($channel){
+    if (array_key_exists($channel, self::$ChannelDescriptions)) {
+      return self::$ChannelDescriptions[$channel];
+    } 
+  }
 
 }
 
