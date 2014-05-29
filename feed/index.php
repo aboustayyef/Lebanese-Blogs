@@ -1,9 +1,10 @@
 <?php 
+$channel = @$_GET['channel'];
 header("Content-Type:text/xml");
 require_once('../init.php');
 $numberOfFeedItems = 25;
-$channel = @$_GET['channel'];
 $channel = empty($channel)? 'all': $channel;
+
 $data = Posts::get_latest_posts($numberOfFeedItems, $channel);
 $now = new dateTime();
 $pubDate = $now->format('D, d M Y H:i:s O');
@@ -29,6 +30,7 @@ $feed_items = "";
 
 foreach ($data as $key => $feed_item) {
 
+  $item_url = htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS');
   $post_content = ""; 
   /*
   Find out the image and if it's in cache
@@ -48,16 +50,30 @@ foreach ($data as $key => $feed_item) {
   }
 
   $post_content.= $feed_item->post_excerpt;
+  $post_content.= ' [<a href ="' . $item_url . '">Go to the post &rarr;</a>]';
+
+  
+  $lebaneseBlogsTools = "<h4>Lebanese Blogs Tools</h4>";
+  $lebaneseBlogsTools .= "<ul>";
+ // $lebaneseBlogsTools .= '<li>Go to this author\'s <a href ="' . $feed_item->blog_url . '">home</a></li>';
+  if (!empty($feed_item->blog_author_twitter_username)) {
+    $lebaneseBlogsTools .= '<li>Follow the author of this post on twitter: <a href ="http://twitter.com/' . $feed_item->blog_author_twitter_username . '">@' . $feed_item->blog_author_twitter_username . '</a></li>';
+  }
+  $lebaneseBlogsTools .= '<li>See the list of this author\'s <a href ="' . WEBPATH.$feed_item->blog_id . '">latest posts</a></li>';
+
+  $lebaneseBlogsTools .= "</ul>"; 
+
+  $post_content .= '<p>--</p>' . $lebaneseBlogsTools;
 
   $item_pub_date = new dateTime();
   $item_pub_date->setTimestamp($feed_item->post_timestamp);
   $item_pub_date = $item_pub_date->format('D, d M Y H:i:s O'); 
   $_feed_item_parts = "\n<item>";
   $_feed_item_parts .= "\n<title>".htmlspecialchars($feed_item->blog_name).": ".htmlspecialchars($feed_item->post_title)."</title>";
-  $_feed_item_parts .= "\n<link>".htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS')."</link>";
+  $_feed_item_parts .= "\n<link>".$item_url."</link>";
   $_feed_item_parts .= "\n<description>".htmlspecialchars($post_content)."</description>";
   $_feed_item_parts .= "\n<pubDate>$item_pub_date </pubDate>";
-  $_feed_item_parts .= "\n<guid>".htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS')."</guid>";
+  $_feed_item_parts .= "\n<guid>".$item_url."</guid>";
   $_feed_item_parts .="\n</item>";
   $feed_items .= $_feed_item_parts;
 }
