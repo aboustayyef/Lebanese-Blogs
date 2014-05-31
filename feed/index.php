@@ -1,8 +1,17 @@
-<?php 
+<?php
+// get the channel
 $channel = @$_GET['channel'];
+
+// set the head type of this document
 header("Content-Type:text/xml");
+
+// prerequisits
 require_once('../init.php');
+
+// RSS config
 $numberOfFeedItems = 25;
+
+// Get Channel's Titles and description
 if (empty($channel)) {
   $channel = 'all';
   $feed_channel_title = 'Lebanese Blogs Feed';
@@ -16,12 +25,15 @@ if (empty($channel)) {
   $feed_channel_description = htmlentities('This is an automated RSS feed of lebanese '. $channelName .' blogs as featured on lebaneseblogs.com');
 }
 
+// get the latest posts
 $data = Posts::get_latest_posts($numberOfFeedItems, $channel);
+
+// Prepare some header variables
 $now = new dateTime();
 $pubDate = $now->format('D, d M Y H:i:s O');
 $feedLocation = WEBPATH.'feed';
 
-// using RSS 2.0 using specs at http://cyber.law.harvard.edu/rss/rss.html
+// Prepare header. Using RSS 2.0 with specs published at http://cyber.law.harvard.edu/rss/rss.html
 $feed_header = <<<feedheader
 <?xml version="1.0"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -38,11 +50,13 @@ $feed_footer = <<<feedfooter
   </channel>
 </rss>
 feedfooter;
+
+// Prepare feeds
 $feed_items = "";
 
 foreach ($data as $key => $feed_item) {
 
-  $item_url = htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS');
+  $item_url = WEBPATH."r.php?r=".urlencode($feed_item->post_url); // use the redirector to count for countdown clicks
   $post_content = ""; 
   /*
   Find out the image and if it's in cache
@@ -58,7 +72,7 @@ foreach ($data as $key => $feed_item) {
     if (file_exists($image_file)) {
       $the_image = $image_cache;
     }
-    $post_content = '<p><img src ="' . $the_image . '" width ="278" height ="' . $image_height . '"></p>'."\n";
+    $post_content = '<p><a href ="'.$item_url.'"><img src ="' . $the_image . '" width ="278" height ="' . $image_height . '"></a></p>'."\n";
   }
 
   $post_content.= $feed_item->post_excerpt;
