@@ -55,8 +55,8 @@ feedfooter;
 $feed_items = "";
 
 foreach ($data as $key => $feed_item) {
-
-  $item_url = WEBPATH."r.php?r=".urlencode($feed_item->post_url); // use the redirector to count for countdown clicks
+  $item_url = htmlspecialchars($feed_item->post_url.'?utm_source=LebaneseBlogs&utm_medium=RSS&utm_campaign=Lb_RSS');
+  $exit_url = WEBPATH."r.php?r=".urlencode($feed_item->post_url); // use the redirector to count for countdown clicks
   $post_content = ""; 
   /*
   Find out the image and if it's in cache
@@ -72,11 +72,11 @@ foreach ($data as $key => $feed_item) {
     if (file_exists($image_file)) {
       $the_image = $image_cache;
     }
-    $post_content = '<p><a href ="'.$item_url.'"><img src ="' . $the_image . '" width ="278" height ="' . $image_height . '"></a></p>'."\n";
+    $post_content = '<p><a href ="'.$exit_url.'"><img src ="' . $the_image . '" width ="278" height ="' . $image_height . '"></a></p>'."\n";
   }
 
   $post_content.= $feed_item->post_excerpt;
-  $post_content.= '<p><a href ="' . $item_url . '">Go to the post &rarr;</a></p>';
+  $post_content.= '<p><a href ="' . $exit_url . '">Go to the post &rarr;</a></p>';
 
   
   $lebaneseBlogsTools = "<h4>Lebanese Blogs Tools</h4>";
