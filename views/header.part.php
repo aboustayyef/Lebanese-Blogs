@@ -46,9 +46,18 @@ if (empty($pageDetails)) {
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/droidarabickufi.css">
       <?php
     }
-
     ?>
 
+    <!-- RSS Feeds -->
+    <link rel="alternate" type="application/rss+xml" title="Lebanese Blogs RSS Feed" href="<?php echo WEBPATH ;?>feed/" />
+    <?php 
+      $channels = Channels::$ChannelDescriptions;
+      foreach ($channels as $channelName => $channelDescription) {
+        ?>
+    <link rel="alternate" type="application/rss+xml" title="Lebanese Blogs <?=htmlentities($channelDescription) ?> RSS Feed" href="<?php echo WEBPATH ;?>feed/<?=$channelName ?>" />
+        <?php
+      }
+    ?>   
   </head>
 
 

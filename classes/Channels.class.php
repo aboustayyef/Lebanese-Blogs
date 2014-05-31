@@ -27,7 +27,7 @@ class Channels
     'columnists'  => 'columnists',
     );
 
-  private static $ChannelDescriptions = array(
+  public static $ChannelDescriptions = array(
     'columnists'   =>    'Columnists',
     'fashion'      =>    'Fashion & Style',
     'food'         =>    'Food & Health',
