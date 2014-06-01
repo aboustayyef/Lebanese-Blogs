@@ -17,9 +17,10 @@
 		<string>GeezaPro</string>
 		<string>GeezaPro-Bold</string>
 		<string>HelveticaNeue</string>
+		<string>AmericanTypewriter-Bold</string>
 	</array>
 	<key>length</key>
-	<integer>1035506</integer>
+	<integer>1106269</integer>
 	<key>version</key>
 	<integer>18</integer>
 </dict>
