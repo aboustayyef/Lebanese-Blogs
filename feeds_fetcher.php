@@ -131,12 +131,13 @@ function fetchIndividualFeed($blog, $workingfeed)
 
 				// cache images
 				if ($blog_post_image_width > 0) { // post has images
-					$image = new Imagick($blog_post_image);
+					if ($image = new Imagick($blog_post_image)){
 					$image = $image->flattenImages();
 					$image->setFormat('JPEG');
 					$image->thumbnailImage(300,0);
 					$outFile = ABSPATH.'img/cache/'.$blog_post_timestamp.'_'.$domain.'.jpg';//.Lb_functions::get_image_format($blog_post_image);
 					$image->writeImage($outFile);
+					};	
 				}
 
 				if (DB::GetInstance()->count() > 0) 
