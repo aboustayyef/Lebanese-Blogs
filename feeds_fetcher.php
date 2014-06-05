@@ -94,7 +94,7 @@ function fetchIndividualFeed($blog, $workingfeed)
 
 			if ((count($urlExists) > 0) || (count($nameExists) > 0)) { // post exists in database
 				echo '  [ x Post already in Database ] ';	
-				break;
+				continue;
 			} else { // ok, new post, insert in database
 				echo "\n-------------> New POST";
 				echo "\n-------------> Title: $blog_post_title";
