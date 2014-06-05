@@ -13,6 +13,7 @@ class Channels
     'style'       => 'fashion', 
     'food'        => 'food',
     'health'      => 'food',
+    'family'      => 'society',
     'society'     => 'society',
     'politics'    => 'politics',
     'tech'        => 'tech',
@@ -24,6 +25,7 @@ class Channels
     'advertising' => 'design',
     'design'      => 'design',
     'photography' => 'design',
+    'art'         => 'design',
     'columnists'  => 'columnists',
     );
 
