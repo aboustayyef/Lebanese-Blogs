@@ -12,7 +12,7 @@ class View
   }
 
   public static function makeBrowseBody($data){
-    if (isset($_SESSION['currentChannel'])) {
+    if ((isset($_SESSION['currentChannel']) && ($_SESSION['currentChannel']) != 'all')) {
       self::categoryHead($_SESSION['currentChannel']);
     }
     Render::drawData($data, 'normal');
@@ -70,9 +70,15 @@ class View
   }
 
   public static function categoryHead($theCategory){
+    ?>
+      <div class="categoryHead">
+        <h2 class ="primaryfont">
+          <?php echo Channels::describeTag($_SESSION['currentChannel']) ?>
+        </h2>
+      </div>
+    <?php
     //echo '<div class ="categoryHeader"><i class ="fa fa-coffee"></i>'.$theCategory.'</div>';
   }
-
 }
 
 ?>

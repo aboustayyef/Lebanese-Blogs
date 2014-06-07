@@ -12,12 +12,20 @@
     overflow:hidden;
 }
 
+
+
 //right of center (without left nav)
 
 #message{
     padding: 8px 25px;
     background: whitesmoke;
     border-bottom: 1px solid $lb_red;
+}
+
+.categoryHead{
+    margin-top: 1em;
+    color: $lb_red;
+    text-align: center;
 }
 
 // Favorites and Saved Starter Pages

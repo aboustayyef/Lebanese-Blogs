@@ -486,6 +486,11 @@ div.mainbar-wrapper {
   background: whitesmoke;
   border-bottom: 1px solid #b12530; }
 
+.categoryHead {
+  margin-top: 1em;
+  color: #b12530;
+  text-align: center; }
+
 #howto {
   height: inherit;
   width: 100%;
