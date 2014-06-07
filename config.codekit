@@ -1102,6 +1102,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/feed\/index.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/feed\/index.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/feeds_fetcher.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1158,6 +1167,17 @@
 		"initialSize": 69730,
 		"inputAbbreviatedPath": "\/img\/badge.png",
 		"outputAbbreviatedPath": "\/img\/badge.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/blog_masthead_logo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 42376,
+		"inputAbbreviatedPath": "\/img\/blog_masthead_logo.jpg",
+		"outputAbbreviatedPath": "\/img\/blog_masthead_logo.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2812,6 +2832,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/thumbs\/dinahamzeh.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11899,
+		"inputAbbreviatedPath": "\/img\/thumbs\/dinahamzeh.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/dinahamzeh.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/thumbs\/dirtykitchensecrets.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -2918,6 +2949,17 @@
 		"initialSize": 2262,
 		"inputAbbreviatedPath": "\/img\/thumbs\/eliamssawir.jpg",
 		"outputAbbreviatedPath": "\/img\/thumbs\/eliamssawir.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/thumbs\/elmerehbi.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3383,
+		"inputAbbreviatedPath": "\/img\/thumbs\/elmerehbi.jpg",
+		"outputAbbreviatedPath": "\/img\/thumbs\/elmerehbi.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
