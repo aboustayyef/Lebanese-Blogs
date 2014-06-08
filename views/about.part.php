@@ -18,10 +18,10 @@
 		
 
 		<h3>What is <em>Lebanese Blogs?</em></h3>
-		<p class ="lead box"><em>Lebanese Blogs</em> is The best place to discover, read and organize the latest posts from Lebanon's top bloggers</p>
+		<p class ="lead box"><em>Lebanese Blogs</em> is The best place to discover, read and organize the latest posts from Lebanon's top authors</p>
 
 		<h3>Why?</h3>
-		<p>Readers shouldn't waste their time searching for cool new Lebanese blogs and digging around for new posts. At the same time, bloggers shouldn't feel pressured to post everyday so that people read their posts. This website hopes to solve both these problems</p>
+		<p>Readers shouldn't waste their time searching for cool new Lebanese blogs and digging around for new posts. At the same time, authors shouldn't feel pressured to post everyday so that people read their posts. This website hopes to solve both these problems</p>
 
 		<h3>How does this thing work?</h3>
 
@@ -48,11 +48,10 @@
 		
 		<p><i class="icon-exclamation-sign"></i> <strong>For a blog to be accepted, it needs to fullfil the criteria below</strong></p>
 		<ul id ="criteria" class ="box">
-			<li>The blogger has to be either Lebanese, living in Lebanon or writing about Lebanon</li>
-			<li>The blogger should have a reasonable track record of regular blogging</li>
+			<li>The author has to be either Lebanese, living in Lebanon or writing about Lebanon</li>
+			<li>The author should have a reasonable track record of regular blogging</li>
 			<li>The blog should be personal, not commercial or institutional</li>
 			<li>The blog should not be a vehicle for ads or spam in the posts</li>
-			<li>The RSS feed of the blog should be full, not partial. Partial RSS feeds will not be accepted</li>
 		</ul>
 
 		<h3>Ready to submit?</h3>
