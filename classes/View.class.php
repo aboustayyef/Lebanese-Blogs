@@ -73,7 +73,8 @@ class View
     ?>
       <div class="categoryHead">
         <h2 class ="primaryfont">
-          <?php echo Channels::describeTag($_SESSION['currentChannel']) ?>
+          <a href ="<?php echo WEBPATH.'?channel=all'; ?>">
+          <span class ="close"><i class="fa fa-times-circle"></i></span></a><?php echo Channels::describeTag($_SESSION['currentChannel']) ?>
         </h2>
       </div>
     <?php

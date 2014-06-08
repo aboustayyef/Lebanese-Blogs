@@ -4,6 +4,15 @@
 $menus-background:darken($lb_red, 8);
 $menus-foreground:white;
 
+.close i{
+    font-size: 0.9em;
+    color: rgb(184,184,184);
+    margin-right:0.6em;
+    &:hover{
+        color: rgb(150,150,150);
+    }
+}
+
 div.mainbar-wrapper {
     z-index: 300;
     top:0;
