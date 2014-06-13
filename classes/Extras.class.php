@@ -191,8 +191,8 @@ class Extras
               $img = $stat->post_image;
 
               // use image cache if exists.
-              $image_cache = IMGCACHE_BASE.$stat->post_timestamp.'_'.$stat->blog_id.'.'.Lb_functions::get_image_format($img);
-              $image_file = ABSPATH.'img/cache/'.$stat->post_timestamp.'_'.$stat->blog_id.'.'.Lb_functions::get_image_format($img);
+              $image_cache = IMGCACHE_BASE.$stat->post_timestamp.'_'.$stat->blog_id.'.jpg';
+              $image_file = ABSPATH.'img/cache/'.$stat->post_timestamp.'_'.$stat->blog_id.'.jpg';
               if (file_exists($image_file)) {
                 $img = $image_cache;
               }

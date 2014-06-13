@@ -200,6 +200,13 @@ textarea, input {
         width: 260px;
         min-width: 0; } }
 
+.close i {
+  font-size: 0.9em;
+  color: #b8b8b8;
+  margin-right: 0.6em; }
+  .close i:hover {
+    color: #969696; }
+
 div.mainbar-wrapper {
   z-index: 300;
   top: 0;
