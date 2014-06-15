@@ -1,3 +1,7 @@
+// 
+//  THIS IS DEPRECATED
+// 
+
 var lbApp ={
 
   init: function(){ },
