@@ -91,8 +91,9 @@ function fetchIndividualFeed($blog, $workingfeed)
 			echo "\n---> checking: $reconstructed_url";
 			$urlExists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_url LIKE "%'.$reconstructed_url.'"')->results();
 			$nameExists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_title ="' . $blog_post_title . '" AND blog_id ="' . $domain . '"')->results();
+			$timeStampExists = DB::GetInstance()->query('SELECT post_id FROM posts WHERE post_timestamp ="' . $blog_post_timestamp . '" AND blog_id ="' . $domain . '"')->results();
 
-			if ((count($urlExists) > 0) || (count($nameExists) > 0)) { // post exists in database
+			if ((count($urlExists) > 0) || (count($nameExists) > 0) || (count($timeStampExists) > 0 )) { // post exists in database
 				echo '  [ x Post already in Database ] ';	
 				continue;
 			} else { // ok, new post, insert in database
