@@ -1,7 +1,8 @@
 cache/*.*
 img/cache/*.*
 config.php
-codekit*.*
+config.codekit
+*codekit*.*
 lebaneseblogs.sublime-workspace
 lebaneseblogs.sublime-project
 php_errors.log
