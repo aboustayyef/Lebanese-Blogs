@@ -1,6 +1,7 @@
 lbApp.Posts =
 {
   isUpdating: 'no', // used to prevent multiple simultaneous loading of new posts
+  page:1,
   config:
   {
     viewtype: 'cards', //default
@@ -94,6 +95,9 @@ $('#view-area').smartscroll(function(){
   if ((e < c*1.4) && (lbApp.Posts.isUpdating == 'no') && global_page != 'search') {
     console.log('updating now');
     lbApp.Posts.addNew();
+    lbApp.Posts.page++;
+    console.log('Page: ' + lbApp.Posts.page);
+    ga('send','pageview','page-'+lbApp.Posts.page);
   }
 });
 
