@@ -81,34 +81,22 @@ a{
     color: #555;
 }
 
-a.btn {
-    display: inline-block;
-    color: #666;
+a#startHere {
+    background: #ffcc66;
+    border-radius: 4px;
+    width: 185px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 12px;
-    padding: .6em 1.6em;
-    &.btn-red{
-        background-color: $lb_red;
-        border-color: darken($lb_red, 15);
-        text-shadow: 0 1px 0 darken($lb_red, 15);
-        color: #FFF;
-        &:hover{
-            background-color: darken($lb_red,5);
-            border-color: darken($lb_red, 20);
-        }
-    }
-    &.btn-large{
-        padding: 10px 30px;
-    }
-    &.btn-small{
-        text-transform: capitalize;
-        font-size: 12px;
-        padding: 0.3em 0.3em;
-        line-height: 1em;
-    }
-    &.btn-whitetext{
-        color: white;
+    margin-left: 10px;
+    text-align: center;
+    color: black;
+    border-bottom: 1px solid #D6A749;
+    border-top: 1px solid white;
+    display: inline-block;
+    line-height: 35px;
+    &:hover{
+        text-decoration: none;
+        color: light(black, 10);
+        background: darken(#ffcc66, 5);
     }
 }
 

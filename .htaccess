@@ -154,6 +154,7 @@ FileETag None
   RewriteRule ^search/?$ search/ [NC,L] #exception for search
   RewriteRule ^admin/?$ admin/ [NC,L] #exception for admin
   RewriteRule ^feed/?$ feed/ [NC,L] #exception for feed
+  RewriteRule ^tour/?$ tour/ [NC,L] #exception for tour
   RewriteRule ^([a-zA-Z0-9-]+)/?$  ?pagewanted=blogger&bloggerid=$1    [NC,L]    # Handle requests for bloggers
 </IfModule>
 

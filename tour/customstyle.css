@@ -1,0 +1,16 @@
+body{
+	margin-top:70px;
+}
+
+a#goBack { 
+	color: #b12530;
+}
+
+a#gotIt {
+  background-color: #b12530;
+  border: none;
+}
+
+a#tellMeMore {
+  color: #b12530;
+}

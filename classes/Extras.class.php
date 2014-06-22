@@ -165,8 +165,7 @@ class Extras
         <div class="card nobackground">
           <div class="announcement">
             <h4>
-              <a href ="http://lebaneseblogs.com/blog/?p=239">What is "virality"?</a><br>
-              <span style ="opacity:0.3"><?php echo str_repeat("|", 30); ?></span><span style ="opacity:0.1"><?php echo str_repeat("|", 20); ?></span>
+              First Time? <a href="tour" id="startHere" class ="secondaryfont">Start Here</a>
             </h4>
           </div>    
 
