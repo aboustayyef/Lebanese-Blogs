@@ -2,7 +2,7 @@
 
 // This defines the way the articles parser reads websites
 
-$daily_star = array(
+$daily_star_old = array(
 	'method'			=> '2', // this method for sites where the articles excerpts and titles are not grouped semanitcally
 	'articles_wrapper'	=>	'#ctl00_ContentPlaceHolder1_tblDetails',
 	'title'				=>	'td.AuthorArticleTitle',
@@ -13,6 +13,19 @@ $daily_star = array(
 	'article_body'		=>	'#ctl00_ContentPlaceHolder1_spanDetails', // The container where we can espect to find the image
 	'img_prefix'		=>	'', // for relative image urls
 	'content_body'		=>  '#ctl00_ContentPlaceHolder1_spanDetails',//This could be different from the article body to prevent storing comments in content
+);
+
+$daily_star = array(
+	'method'			=> '1', // this method for sites where the articles excerpts and titles are not grouped semanitcally
+	'articles_wrapper'	=>	'ul.more-news li',
+	'title'				=>	array('h4',0),
+	'link'				=>	array('a',0),
+	'link_prefix'		=>	'http://dailystar.com.lb', //for relative urls
+	'timestamp'			=>	array('.value-datetime',0,0,13),
+	'excerpt'			=>	array('p',0),
+	'article_body'		=>	'', // The container where we can espect to find the image
+	'img_prefix'		=>	'http://dailystar.com.lb', // for relative image urls
+	'content_body'		=>  '#divDetails',//This could be different from the article body to prevent storing comments in content
 );
 
 $now_lebanon = array(
@@ -60,7 +73,7 @@ $beirutcityguide = array(
 	'title'				=>	array('h3',0),
 	'link'				=>	array('a',0),
 	'link_prefix'		=>	'http://beirut.com', //for relative urls
-	'timestamp'			=>	array('.cnt li', 1, 3), // the last item is to shop off the "on " in "on jan 22, 2014"
+	'timestamp'			=>	array('.cnt li',1, 3, 12), // the last item is to shop off the "on " in "on jan 22, 2014"
 	'excerpt'			=>	array('.cnt p',0),
 	'article_body'		=>	'.profile', // The container where we can espect to find the image
 	'img_prefix'		=>	'', // for relative image urls

@@ -56,7 +56,7 @@ class GetArticles {
 						// shop off superflous part of timestamp string
 						$date_description = html_entity_decode($element->find($media_source['timestamp'][0],$media_source['timestamp'][1])->plaintext);
 						if (isset($media_source['timestamp'][2])) {
-							$adjusted_date_description =substr($date_description,$media_source['timestamp'][2]);
+							$adjusted_date_description =substr($date_description,$media_source['timestamp'][2], $media_source['timestamp'][2]);
 							$thedate = new DateTime(trim($adjusted_date_description));
 
 						}else{
@@ -71,6 +71,7 @@ class GetArticles {
 					$article['excerpt'] = trim(html_entity_decode($element->find($media_source['excerpt'][0],$media_source['excerpt'][1])->plaintext));
 					$article['image_details'] = self::getImageFromURL($article['link'], $media_source['article_body'], $media_source['img_prefix']);
 					$article["content"] = self::getContentFromURL($article["link"], $media_source['content_body']);
+					print_r($article);
 					return $article;
 				} else {
 					// $whichArticle is probably larger than amount of articles available

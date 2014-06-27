@@ -49,8 +49,8 @@ foreach ($columnists as $key => $columnist) {
 				}
 
 				// when a reset is being done, use line 2. Else use line 1;
-				$timeStampToUse = time(); // line 1
-				// $timeStampToUse = $article['timestamp']
+				//  $timeStampToUse = time(); // line 1
+					$timeStampToUse = $article['timestamp'];
 
 
 				DB::getInstance()->insert('posts', array(
@@ -64,8 +64,7 @@ foreach ($columnists as $key => $columnist) {
 					'post_image_height'	=> $image_height,
 					'post_image_width'	=>	$image_width,
 				));
-
-
+			
 				// cache images
 				if ($image_width > 0) { // post has images
 					$image = new Imagick($image_source);
@@ -75,9 +74,14 @@ foreach ($columnists as $key => $columnist) {
 					$outFile = ABSPATH.'img/cache/'.$timeStampToUse.'_'.$columnist->col_shorthand.'.jpg';//.Lb_functions::get_image_format($image_source);
 					$image->writeImage($outFile);
 				}
+				if (DB::GetInstance()->count() > 0) 
+				{
+					echo 'added: "'.$article['title'].'"';
+					echo "\n";
+				} else {
+					echo "\n [XXX] There was an error. Couldn't Add post.. \n";
+				}
 
-				echo 'added: "'.$article['title'].'"';
-				echo "\n";
 
 				// If you are debugging, uncomment the next line so that just one article of each columnist is inserted
 				// break;
