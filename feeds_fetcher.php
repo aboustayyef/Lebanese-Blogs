@@ -43,6 +43,12 @@ echo $dhr.'Feeds Work Ended: '.date('d M Y , H:i:s').$dhr;
 
 function fetchIndividualFeed($blog, $workingfeed)
 {
+
+	// the kind of fetching can be "updater" or "thorough"
+	// 'updater' breaks the loop and goes to next blog as soon as fetcher finds an existing post
+	// 'thorough' goes through the entire feed to find older unlisted posts.
+	$kindOfFetching = "updater";
+
 	global $hr, $dhr;
 	$maxitems = 0;
 
@@ -95,7 +101,11 @@ function fetchIndividualFeed($blog, $workingfeed)
 
 			if ((count($urlExists) > 0) || (count($nameExists) > 0) || (count($timeStampExists) > 0 )) { // post exists in database
 				echo '  [ x Post already in Database ] ';	
-				continue;
+				if ($kindOfFetching == 'thorough') {
+					continue;
+				} else {
+					break;
+				}
 			} else { // ok, new post, insert in database
 				echo "\n-------------> New POST";
 				echo "\n-------------> Title: $blog_post_title";
@@ -131,6 +141,7 @@ function fetchIndividualFeed($blog, $workingfeed)
 					));
 
 				// cache images
+				// 
 				if ($blog_post_image_width > 0) { // post has images
 					if ($image = new Imagick($blog_post_image)){
 					$image = $image->flattenImages();
