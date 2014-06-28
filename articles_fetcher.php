@@ -49,8 +49,8 @@ foreach ($columnists as $key => $columnist) {
 				}
 
 				// when a reset is being done, use line 2. Else use line 1;
-				//  $timeStampToUse = time(); // line 1
-					$timeStampToUse = $article['timestamp'];
+				  $timeStampToUse = time(); // line 1
+				//	$timeStampToUse = $article['timestamp'];
 
 
 				DB::getInstance()->insert('posts', array(
