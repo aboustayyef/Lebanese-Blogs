@@ -7,10 +7,10 @@
 class DB {
 
 	// change these depending on database wanted
-	private $_username = 'mustapha';
-	private $_host = 'localhost';
-	private $_password = 'mm000741';
-	private $_database = 'lebanese_blogs';
+	private $_username = DB_USER;
+	private $_host = '127.0.0.1';
+	private $_password = DB_PASS;
+	private $_database = DB_DBASE;
 
 
 	private static $_instance = null;
