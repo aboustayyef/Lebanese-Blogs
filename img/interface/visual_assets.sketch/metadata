@@ -12,16 +12,23 @@
 	<array>
 		<string>HelveticaNeue-Bold</string>
 		<string>HelveticaNeue</string>
-		<string>AmericanTypewriter-Bold</string>
+		<string>HelveticaNeue</string>
 		<string>HelveticaNeue-Bold</string>
 		<string>HelveticaNeue-Light</string>
 		<string>HelveticaNeue-Bold</string>
 		<string>GeezaPro</string>
 		<string>GeezaPro-Bold</string>
 		<string>HelveticaNeue</string>
+		<string>AmericanTypewriter-Bold</string>
+		<string>AbadiMT-CondensedLight</string>
+		<string>DINCondensed-Bold</string>
+		<string>AbadiMT-CondensedLight</string>
+		<string>DINCondensed-Bold</string>
+		<string>DINCondensed-Bold</string>
+		<string>DINCondensed-Bold</string>
 	</array>
 	<key>length</key>
-	<integer>1268187</integer>
+	<integer>1341057</integer>
 	<key>version</key>
 	<integer>18</integer>
 </dict>

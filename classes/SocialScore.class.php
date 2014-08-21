@@ -42,16 +42,24 @@ class SocialScore
 
   private function get_tweets() 
   {
-    $json_string = $this->file_get_contents_curl('http://urls.api.twitter.com/1/urls/count.json?url=' . $this->url);
-    $json = json_decode($json_string, true);
-    return isset($json['count'])?intval($json['count']):0;
+    try {
+      $json_string = $this->file_get_contents_curl('http://urls.api.twitter.com/1/urls/count.json?url=' . $this->url);
+      $json = json_decode($json_string, true);
+      return isset($json['count'])?intval($json['count']):0;
+    } catch (Exception $e) {
+      echo "Could not get twitter count of URL $this->url\n";
+    }
   }
 
   private function get_fb() 
   {
-    $json_string = $this->file_get_contents_curl('http://api.facebook.com/restserver.php?method=links.getStats&format=json&urls='.$this->url);
-    $json = json_decode($json_string, true);
-    return isset($json[0]['total_count'])?intval($json[0]['total_count']):0;
+    try {
+      $json_string = $this->file_get_contents_curl('http://api.facebook.com/restserver.php?method=links.getStats&format=json&urls='.$this->url);
+      $json = json_decode($json_string, true);
+      return isset($json[0]['total_count'])?intval($json[0]['total_count']):0; 
+    } catch (Exception $e) {
+      echo "Could not get Facebook count of URL $this->url\n";
+    }
   }
 
   private function file_get_contents_curl($url){
