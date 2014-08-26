@@ -21,7 +21,6 @@ if ((!empty($argv[1])) && ($argv[1] > 0)) {
   $hours = $argv[1];
 }
 
-
 $hoursAgo = time() - ($hours * 60 * 60);
 
 $posts = DB::getInstance()->query('SELECT post_title, post_url, post_visits FROM posts WHERE `post_timestamp` > '.$hoursAgo)->results();
@@ -32,6 +31,9 @@ foreach($posts as $key => $post){
 	$score = new SocialScore($post->post_url);
   $title = $post->post_title;
   $totalScore = $score->getFacebookScore() + $score->getTwitterScore();
+  
+  // make total shared more weighed by twitter because it's less easy to game and buy
+  $totalScore = round((($score->getFacebookScore() + (2 * $score->getTwitterScore())) / 3 ) * 2 );
   
   // formula#1: $virality = 2+round(3 * sqrt($shares));
   // fromula#2: $virality = 2 + round(6 * (pow($totalScore, 1/3)));

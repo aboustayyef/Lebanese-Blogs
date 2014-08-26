@@ -40,14 +40,26 @@ class SocialScore
 
   // Helper functions (the meat)
 
-  private function get_tweets() 
+  private function get_tweets()
   {
+    // remove protocole (http://) from URL
+    $url = preg_replace("#https?://#u", "", $this->url);
     try {
-      $json_string = $this->file_get_contents_curl('http://urls.api.twitter.com/1/urls/count.json?url=' . $this->url);
+      $json_string = $this->file_get_contents_curl('http://urls.api.twitter.com/1/urls/count.json?url=' . $url);
       if ($json_string) {
         $json = json_decode($json_string, true);
-        return isset($json['count'])?intval($json['count']):0;
+        $result = isset($json['count'])?intval($json['count']):0;
       }
+      if ($result == 0) {
+        $url = 'www.' . $url;
+        $json_string = $this->file_get_contents_curl('http://urls.api.twitter.com/1/urls/count.json?url=' . $url);
+        if ($json_string) {
+          $json = json_decode($json_string, true);
+          $result = isset($json['count'])?intval($json['count']):0;
+        }
+      }
+      return $result;
+
     } catch (Exception $e) {
       echo "Could not get twitter count of URL $this->url\n";
     }
