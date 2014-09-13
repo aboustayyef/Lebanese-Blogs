@@ -97,7 +97,7 @@ function areWeInChannel($s){
       </a> 
 
     </div>
-    <div id ="viewtype">
+    <!-- <div id ="viewtype">
       <h4 class="sectionheader">Posts Layout </h4>
       <div id="icons">
         
@@ -140,7 +140,7 @@ function areWeInChannel($s){
               }
               echo '.png' ;?>" width ="25" height ="25" alt=""></a>
             </div>
-          </div>
+          </div> -->
           <div class="credits">
             Designed and Built by <br> <a href ="http://twitter.com/beirutspring">Mustapha Hamoui</a>
           </div>

@@ -19,6 +19,12 @@
 		<string>GeezaPro</string>
 		<string>GeezaPro-Bold</string>
 		<string>HelveticaNeue</string>
+		<string>GeezaPro</string>
+		<string>GeezaPro-Bold</string>
+		<string>HelveticaNeue</string>
+		<string>GeezaPro</string>
+		<string>GeezaPro-Bold</string>
+		<string>HelveticaNeue</string>
 		<string>AmericanTypewriter-Bold</string>
 		<string>AbadiMT-CondensedLight</string>
 		<string>DINCondensed-Bold</string>
@@ -26,9 +32,21 @@
 		<string>DINCondensed-Bold</string>
 		<string>DINCondensed-Bold</string>
 		<string>DINCondensed-Bold</string>
+		<string>DINCondensed-Bold</string>
+		<string>Helvetica</string>
+		<string>Helvetica</string>
+		<string>DINCondensed-Bold</string>
+		<string>Helvetica</string>
+		<string>Helvetica</string>
+		<string>DINCondensed-Bold</string>
+		<string>Helvetica-Bold</string>
+		<string>Helvetica-Light</string>
+		<string>Helvetica-Bold</string>
+		<string>Helvetica-Bold</string>
+		<string>Helvetica-Light</string>
 	</array>
 	<key>length</key>
-	<integer>1341057</integer>
+	<integer>1966703</integer>
 	<key>version</key>
 	<integer>18</integer>
 </dict>
